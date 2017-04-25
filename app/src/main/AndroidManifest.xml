@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tr.xip.scd.tensuu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.login.LoginActivity" />
+
+        <activity android:name=".ui.student.StudentActivity" />
+
+        <activity
+            android:name=".ui.admin.AdminToolsActivity"
+            android:label="@string/title_admin_tools" />
+
+        <activity
+            android:name=".ui.admin.user.EditUserActivity"
+            android:label="@string/title_edit_user" />
+
+        <activity
+            android:name=".ui.admin.student.EditStudentActivity"
+            android:label="@string/title_edit_student" />
+    </application>
+</manifest>

@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">Tensuu</string>
+    <string name="title_users">Users</string>
+    <string name="title_students">Students</string>
+    <string name="title_my_points">My Points</string>
+    <string name="title_reports">Reports</string>
+    <string name="title_add_point">Add Point</string>
+    <string name="title_add_student">Add Student</string>
+    <string name="title_edit_student">Edit Student</string>
+    <string name="title_add_user">Add User</string>
+    <string name="title_edit_user">Edit User</string>
+
+    <string name="title_weekly">Weekly</string>
+    <string name="title_custom">Custom</string>
+
+    <string name="title_admin_tools">Admin Tools</string>
+
+    <string name="action_add">Add</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_share">Share</string>
+    <string name="action_go_to_student">Go To Student</string>
+
+    <string name="title_add_points">Add Points</string>
+    <string name="title_add_period">Add Period</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_confirm">Password (Confirm)</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="full_name">Full name</string>
+    <string name="save">Save</string>
+
+    <string name="amount">Amount</string>
+    <string name="student">Student</string>
+    <string name="reason_optional">Reason (Optional)</string>
+
+    <string name="admin">Administrator</string>
+    <string name="can_modify">Can Make Modifications</string>
+
+    <string name="search">Search</string>
+
+    <string name="points">Points</string>
+
+    <string name="id">ID</string>
+    <string name="smart_school_id">Smart School ID</string>
+    <string name="grade">Grade</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="floor">Floor</string>
+
+    <string name="date">Date</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+
+    <string name="week_of_s">Week of %s</string>
+
+    <string name="second_floor">2nd Floor</string>
+    <string name="third_floor">3rd Floor</string>
+    <string name="question_floor">\? Floor</string>
+
+    <string name="today_x">Today, %s</string>
+    <string name="yesterday_x">Yesterday, %s</string>
+
+    <string name="no_points">No points</string>
+    <string name="no_points_you_havent_added">You haven\'t added any points yet.\nTap the <b>+</b> button!</string>
+    <string name="no_points_student_has_no_points">Looks like this student is crystal clean</string>
+
+    <string name="error_invalid_email">Invalid email</string>
+    <string name="error_invalid_password">Invalid password</string>
+    <string name="error_invalid_password_not_matched">Passwords don\'t match</string>
+    <string name="error_invalid_name">Invalid name</string>
+
+    <string name="error_invalid_amount">Invalid amount</string>
+    <string name="error_invalid_student">Invalid student</string>
+
+    <string name="error_invalid_ssid">Invalid Smart School ID</string>
+    <string name="error_invalid_first_name">Invalid first name</string>
+    <string name="error_invalid_last_name">Invalid last name</string>
+    <string name="error_invalid_grade">Invalid grade</string>
+
+    <string name="title_sign_out_question">Sign Out?</string>
+    <string name="info_are_you_sure_sign_out">Are you sure you want to sign out?</string>
+
+    <string name="info_showing_x_to_y">Showing %1$s to %2$s</string>
+
+    <string name="info_connecting_to_server">Connecting to server…</string>
+    <string name="info_connected_to_server">Connected to server</string>
+    <string name="error_connecting_to_server_x">Error connecting to server - %s</string>
+    <string name="error_signing_in">Error signing in…</string>
+    <string name="error_invalid_user">The specified user doesn\'t exist</string>
+    <string name="error_incorrect_password">Incorrect password</string>
+    <string name="error_couldnt_update_name">Error updating name. Please try again.</string>
+    <string name="error_couldnt_find_user">Couldn\'t find user</string>
+    <string name="error_couldnt_find_student">Couldn\'t find student</string>
+
+    <string name="share_student_points">Dormitory points for %1$s:\n%2$s\nTotal: %3$s</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="retry">Retry</string>
+
+    <string name="floating_action_button_scroll_behavior">tr.xip.scd.tensuu.ui.common.view.ScrollAwareFabBehavior</string>
+</resources>
