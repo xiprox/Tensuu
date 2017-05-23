@@ -22,11 +22,6 @@ class App : Application() {
 
         /* Realm */
         Realm.init(this)
-        val realmConfig = RealmConfiguration.Builder()
-                .name("tensuu.realm")
-                .deleteRealmIfMigrationNeeded()
-                .build()
-        Realm.setDefaultConfiguration(realmConfig)
     }
 
     companion object {
