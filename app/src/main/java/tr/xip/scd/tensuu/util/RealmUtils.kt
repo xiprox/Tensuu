@@ -11,16 +11,6 @@ import java.util.concurrent.atomic.AtomicInteger
  * Realm stuff
  */
 object RealmUtils {
-    val lastPointId by lazy {
-        if (SyncUser.currentUser() != null) {
-            syncedRealm().use {
-                AtomicInteger((it.where(Point::class.java).max("id") ?: 0).toInt())
-            }
-        } else {
-            AtomicInteger(0)
-        }
-    }
-
     private val syncConfig by lazy {
         SyncConfiguration.Builder(
                 SyncUser.currentUser(),

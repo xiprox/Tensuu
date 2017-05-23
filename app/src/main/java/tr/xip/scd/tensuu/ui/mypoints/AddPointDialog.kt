@@ -15,9 +15,7 @@ import tr.xip.scd.tensuu.data.model.User
 import tr.xip.scd.tensuu.data.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
-import tr.xip.scd.tensuu.util.RealmUtils.lastPointId
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.strippedTimestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -67,7 +65,6 @@ object AddPointDialog {
 
                 if (validateFields(v, amountText, selectedStudent, reason)) {
                     val point = Point()
-                    point.id = lastPointId.incrementAndGet()
                     point.amount = amountText.toInt()
                     point.to = selectedStudent
                     point.from = realm.where(User::class.java)
@@ -75,6 +72,7 @@ object AddPointDialog {
                             .findFirst()
                     point.timestamp = date.timeInMillis
                     point.reason = reason
+                    point.id = point.createId()
 
                     realm.executeTransaction {
                         it.copyToRealmOrUpdate(point)
