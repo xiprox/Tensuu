@@ -16,6 +16,7 @@ import tr.xip.scd.tensuu.data.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
+import tr.xip.scd.tensuu.util.ext.strippedTimestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -70,7 +71,7 @@ object AddPointDialog {
                     point.from = realm.where(User::class.java)
                             .equalTo(UserFields.EMAIL, Credentials.email)
                             .findFirst()
-                    point.timestamp = date.timeInMillis
+                    point.timestamp = date.strippedTimestamp()
                     point.reason = reason
                     point.id = point.createId()
 

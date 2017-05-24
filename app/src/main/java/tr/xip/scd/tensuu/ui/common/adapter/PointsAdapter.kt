@@ -56,13 +56,11 @@ class PointsAdapter(data: OrderedRealmCollection<Point>) : RealmRecyclerViewAdap
         var timeText: String? = null
         if (timestamp != 0.toLong()) {
             if (timestamp.isToday()) {
-                val timeFormatted = SimpleDateFormat("h:mm a").format(timestamp)
-                timeText = context.getString(R.string.today_x, timeFormatted)
+                timeText = context.getString(R.string.today)
             } else if (timestamp.isYesterday()) {
-                val timeFormatted = SimpleDateFormat("h:mm a").format(timestamp)
-                timeText = context.getString(R.string.yesterday_x, timeFormatted)
+                timeText = context.getString(R.string.yesterday)
             } else {
-                timeText = SimpleDateFormat("MMM d, yyyy, h:mm a").format(timestamp)
+                timeText = SimpleDateFormat("MMM d, yyyy").format(timestamp)
             }
         }
         if (timeText != null) {

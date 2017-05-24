@@ -60,8 +60,8 @@
     <string name="third_floor">3rd Floor</string>
     <string name="question_floor">\? Floor</string>
 
-    <string name="today_x">Today, %s</string>
-    <string name="yesterday_x">Yesterday, %s</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
 
     <string name="no_points">No points</string>
     <string name="no_points_you_havent_added">You haven\'t added any points yet.\nTap the <b>+</b> button!</string>
