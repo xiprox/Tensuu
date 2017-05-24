@@ -29,8 +29,14 @@ class CustomRangePresenter : RealmPresenter<CustomRangeView>() {
                         realm.where(Student::class.java)
                                 .findAll()
                                 .sort(
-                                        arrayOf(StudentFields.FLOOR, StudentFields.LAST_NAME, StudentFields.FIRST_NAME),
-                                        arrayOf(Sort.ASCENDING, Sort.ASCENDING, Sort.ASCENDING)
+                                        arrayOf(StudentFields.FLOOR,
+                                                StudentFields.GRADE,
+                                                StudentFields.LAST_NAME,
+                                                StudentFields.FIRST_NAME),
+                                        arrayOf(Sort.ASCENDING,
+                                                Sort.ASCENDING,
+                                                Sort.ASCENDING,
+                                                Sort.ASCENDING)
                                 ),
                         { view?.onStudentClicked(it) }
                 )

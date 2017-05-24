@@ -27,9 +27,13 @@ class WeeklyPresenter : RealmPresenter<WeeklyView>() {
                                 .findAll()
                                 .sort(
                                         arrayOf(StudentFields.FLOOR,
+                                                StudentFields.GRADE,
                                                 StudentFields.LAST_NAME,
                                                 StudentFields.FIRST_NAME),
-                                        arrayOf(Sort.ASCENDING, Sort.ASCENDING, Sort.ASCENDING)
+                                        arrayOf(Sort.ASCENDING,
+                                                Sort.ASCENDING,
+                                                Sort.ASCENDING,
+                                                Sort.ASCENDING)
                                 ),
                         { view?.onStudentClicked(it) }
                 )
