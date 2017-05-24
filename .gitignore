@@ -45,3 +45,4 @@ captures/
 # Sensitive project files
 google-services.json
 RealmConfig.kt
+xip-key.json
