@@ -60,8 +60,8 @@ class StudentPresenter : RealmPresenter<StudentView>() {
                 .equalTo(PointFields.TO.SSID, ssid)
         if (rangeStart != 0L && rangeEnd != 0L) {
             query = query
-                    .greaterThan(PointFields.TIMESTAMP, rangeStart)
-                    .lessThan(PointFields.TIMESTAMP, rangeEnd)
+                    .greaterThanOrEqualTo(PointFields.TIMESTAMP, rangeStart)
+                    .lessThanOrEqualTo(PointFields.TIMESTAMP, rangeEnd)
         }
         view?.setPoints(
                 100 + query.sum(PointFields.AMOUNT).toInt()
