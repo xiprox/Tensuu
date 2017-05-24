@@ -46,8 +46,8 @@ class ReportsAdapter(
 
         var points = realm.where(Point::class.java)
                 .equalTo(PointFields.TO.SSID, item.ssid)
-                .greaterThan(PointFields.TIMESTAMP, beginTimestamp)
-                .lessThan(PointFields.TIMESTAMP, endTimestamp)
+                .greaterThanOrEqualTo(PointFields.TIMESTAMP, beginTimestamp)
+                .lessThanOrEqualTo(PointFields.TIMESTAMP, endTimestamp)
                 .sum(PointFields.AMOUNT).toInt()
         if (!weekly) points += 100
         holder.itemView.points.text = points.toString()
