@@ -47,3 +47,8 @@ fun Calendar.stripToDate(): Calendar {
 fun Calendar.strippedTimestamp(): Long {
     return stripToDate().timeInMillis
 }
+
+fun Calendar.setTimeInMillisAndReturn(time: Long): Calendar {
+    timeInMillis = time
+    return this
+}

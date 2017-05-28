@@ -15,7 +15,7 @@ object RealmUtils {
         SyncConfiguration.Builder(
                 SyncUser.currentUser(),
                 "realm://${RealmConfig.URL}/~/tensuu"
-        ).build()
+        ).schemaVersion(2).build()
     }
 
     fun syncedRealm(): Realm {

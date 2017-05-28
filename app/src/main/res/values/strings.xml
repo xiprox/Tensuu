@@ -2,6 +2,7 @@
     <string name="app_name">Tensuu</string>
     <string name="title_users">Users</string>
     <string name="title_students">Students</string>
+    <string name="title_period">Period</string>
     <string name="title_my_points">My Points</string>
     <string name="title_reports">Reports</string>
     <string name="title_add_point">Add Point</string>
