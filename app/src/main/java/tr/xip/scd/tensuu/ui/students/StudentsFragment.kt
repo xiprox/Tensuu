@@ -76,8 +76,12 @@ open class StudentsFragment : MvpFragment<StudentsView, StudentsPresenter>(), St
         if (item != null) presenter.onStudentClicked(item)
     }
 
-    override fun startStudentActivity(student: Student) {
-        StudentActivity.start(context, student.ssid)
+    override fun startStudentActivity(student: Student, rangeStart: Long?, rangeEnd: Long?) {
+        if (rangeStart != null && rangeEnd != null) {
+            StudentActivity.start(context, rangeStart, rangeEnd, student.ssid)
+        } else {
+            StudentActivity.start(context, student.ssid)
+        }
     }
 
     override fun runOnUiThread(body: () -> Unit) {

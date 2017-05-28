@@ -9,6 +9,7 @@ import io.realm.Realm
 import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_student.view.*
 import tr.xip.scd.tensuu.R
+import tr.xip.scd.tensuu.data.model.Period
 import tr.xip.scd.tensuu.data.model.Point
 import tr.xip.scd.tensuu.data.model.PointFields
 import tr.xip.scd.tensuu.data.model.Student
@@ -19,6 +20,8 @@ class StudentsAdapter(
         data: OrderedRealmCollection<Student>,
         val itemClickListener: ((clickedView: View) -> Unit)? = null
 ) : RealmRecyclerViewAdapter<Student, StudentsAdapter.ViewHolder>(data, true) {
+
+    private val period: Period? by lazy { realm.where(Period::class.java).findFirst() }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = parent.context.getLayoutInflater().inflate(R.layout.item_student, parent, false)
@@ -37,6 +40,8 @@ class StudentsAdapter(
 
         val points = 100 + realm.where(Point::class.java)
                 .equalTo(PointFields.TO.SSID, item.ssid)
+                .greaterThanOrEqualTo(PointFields.TIMESTAMP, period?.start ?: 0)
+                .lessThanOrEqualTo(PointFields.TIMESTAMP, period?.end ?: 0)
                 .sum(PointFields.AMOUNT).toInt()
         holder.itemView.points.text = points.toString()
     }

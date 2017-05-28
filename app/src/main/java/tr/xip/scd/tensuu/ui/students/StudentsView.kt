@@ -13,6 +13,6 @@ interface StudentsView : MvpView {
 
     fun onStudentClicked(view: View)
 
-    fun startStudentActivity(student: Student)
+    fun startStudentActivity(student: Student, rangeStart: Long?, rangeEnd: Long?)
     fun runOnUiThread(body: () -> Unit)
 }

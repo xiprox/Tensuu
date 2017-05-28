@@ -2,6 +2,7 @@ package tr.xip.scd.tensuu.ui.students
 
 import android.text.Editable
 import io.realm.Case
+import tr.xip.scd.tensuu.data.model.Period
 import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.data.model.StudentFields
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
@@ -22,7 +23,8 @@ class StudentsPresenter : RealmPresenter<StudentsView>() {
     }
 
     fun onStudentClicked(student: Student) {
-        view?.startStudentActivity(student)
+        val period = realm.where(Period::class.java).findFirst()
+        view?.startStudentActivity(student, period?.start, period?.end)
     }
 
     fun onSearchTextChangedInstant(s: Editable?) {

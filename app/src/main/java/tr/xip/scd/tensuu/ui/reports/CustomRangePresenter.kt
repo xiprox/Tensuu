@@ -1,6 +1,7 @@
 package tr.xip.scd.tensuu.ui.reports
 
 import io.realm.Sort
+import tr.xip.scd.tensuu.data.model.Period
 import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.data.model.StudentFields
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
@@ -20,6 +21,12 @@ class CustomRangePresenter : RealmPresenter<CustomRangeView>() {
     private var end = GregorianCalendar().stripToDate()
 
     fun init() {
+        val period = realm.where(Period::class.java).findFirst()
+        if (period != null) {
+            start.timeInMillis = period.start
+            end.timeInMillis = period.end
+        }
+
         view?.setAdapter(
                 ReportsAdapter(
                         realm,
