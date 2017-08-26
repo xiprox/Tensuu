@@ -9,10 +9,7 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.dialog_add_point.view.*
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Point
-import tr.xip.scd.tensuu.data.model.Student
-import tr.xip.scd.tensuu.data.model.User
-import tr.xip.scd.tensuu.data.model.UserFields
+import tr.xip.scd.tensuu.data.model.*
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.local.Store
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
@@ -27,15 +24,18 @@ object AddPointDialog {
     fun new(realm: Realm, context: Context): AlertDialog? {
         val v = context.getLayoutInflater().inflate(R.layout.dialog_add_point, null, false)
 
-        val adapter = StudentsAutoCompleteAdapter(realm, realm.where(Student::class.java).findAll())
-
+        val studentsAdapter = StudentsAutoCompleteAdapter(realm, realm.where(Student::class.java).findAll())
         var selectedStudent: Student? = null
-        v.to.setOnItemClickListener { parent, view, position, id ->
-            selectedStudent = adapter.getItem(position)
+        v.to.setOnItemClickListener { _, _, position, _ ->
+            selectedStudent = studentsAdapter.getItem(position)
         }
         v.to.threshold = 1
-        v.to.setAdapter(adapter)
+        v.to.setAdapter(studentsAdapter)
         v.to.setSelection(0)
+
+        val reasonsAdapter = ReasonsAutoCompleteAdapter(realm, realm.where(PointReason::class.java).findAll())
+        v.reason.threshold = 1
+        v.reason.setAdapter(reasonsAdapter)
 
         val date = Calendar.getInstance()
 
@@ -67,8 +67,8 @@ object AddPointDialog {
 
             positive.setOnClickListener {
                 val amountText = v.amount.text.toString()
-                var reason: String? = v.reason.text.toString()
-                if (reason?.trim()?.isEmpty() ?: false) reason = null
+                var reason: String? = v.reason.text?.toString()
+                if (reason?.trim()?.isEmpty() == true) reason = null
 
                 if (validateFields(v, amountText, selectedStudent, reason)) {
                     val point = Point()
@@ -84,7 +84,7 @@ object AddPointDialog {
                         it.copyToRealm(point)
                     }
 
-                    persistDate(date)
+                    persistData(realm, date, reason)
 
                     dialog.dismiss()
                 }
@@ -115,7 +115,19 @@ object AddPointDialog {
         return true
     }
 
-    private fun persistDate(date: Calendar) {
+    private fun persistData(realm: Realm, date: Calendar, reason: String?) {
         Store.lastPointAddTimestamp = date.strippedTimestamp()
+
+        reason?.let {
+            val pointReason = PointReason()
+            pointReason.text = reason
+            val existingRecord = realm.where(PointReason::class.java)
+                    .equalTo(PointReasonFields.TEXT, reason).findFirst()
+            if (existingRecord == null) {
+                realm.executeTransaction {
+                    realm.copyToRealm(pointReason)
+                }
+            }
+        }
     }
 }
