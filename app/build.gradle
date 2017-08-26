@@ -51,6 +51,10 @@ android {
             signingConfig signingConfigs.release
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/app_debug.kotlin_module'
+    }
 }
 
 play {
