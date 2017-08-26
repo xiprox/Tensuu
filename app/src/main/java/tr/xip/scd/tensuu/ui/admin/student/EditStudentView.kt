@@ -3,7 +3,6 @@ package tr.xip.scd.tensuu.ui.admin.student
 import com.hannesdorfmann.mosby3.mvp.MvpView
 
 interface EditStudentView : MvpView {
-    fun setId(value: String?)
     fun setSsid(value: String?)
     fun setFirstName(value: String?)
     fun setLastName(value: String?)

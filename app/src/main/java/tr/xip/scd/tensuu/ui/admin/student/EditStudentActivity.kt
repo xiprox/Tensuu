@@ -51,10 +51,6 @@ class EditStudentActivity : MvpActivity<EditStudentView, EditStudentPresenter>()
         }
     }
 
-    override fun setId(value: String?) {
-        id.setText(value)
-    }
-
     override fun setSsid(value: String?) {
         ssid.setText(value)
     }
