@@ -47,6 +47,16 @@ fun Long.stripToDate(): Long {
 }
 
 /**
+ * Adds 23h 59m 59s 999millis to a stripped timestamp to make it exactly the end of the day.
+ */
+fun Long.toEndOfTheDay(): Long {
+    val time = stripToDate()
+    val twentyThreeHours = 23 * 60 * 60 * 1000
+    val fiftyNineMinutes = 59 * 60 * 1000
+    val fiftyNineSeconds = 59 * 60 * 1000
+    return time + twentyThreeHours + fiftyNineMinutes + fiftyNineSeconds + 999
+}
+/**
  * Assumes this is a UNIX timestamp and returns a formatted String from it.
  *
  * Example: Jun 2, 2017

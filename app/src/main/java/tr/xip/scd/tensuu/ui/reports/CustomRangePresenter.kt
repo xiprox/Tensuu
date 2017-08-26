@@ -5,10 +5,7 @@ import tr.xip.scd.tensuu.data.model.Period
 import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.data.model.StudentFields
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
-import tr.xip.scd.tensuu.util.ext.dayOfMonth
-import tr.xip.scd.tensuu.util.ext.month
-import tr.xip.scd.tensuu.util.ext.stripToDate
-import tr.xip.scd.tensuu.util.ext.year
+import tr.xip.scd.tensuu.util.ext.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,8 +27,8 @@ class CustomRangePresenter : RealmPresenter<CustomRangeView>() {
         view?.setAdapter(
                 ReportsAdapter(
                         realm,
-                        start.timeInMillis,
-                        end.timeInMillis,
+                        start.strippedTimestamp(),
+                        end.strippedTimestamp().toEndOfTheDay(),
                         false,
                         realm.where(Student::class.java)
                                 .findAll()
@@ -61,8 +58,8 @@ class CustomRangePresenter : RealmPresenter<CustomRangeView>() {
 
     private fun reloadData() {
         view?.getAdapter()?.updateDates(
-                start.timeInMillis,
-                end.timeInMillis
+                start.strippedTimestamp(),
+                end.strippedTimestamp().toEndOfTheDay()
         )
     }
 

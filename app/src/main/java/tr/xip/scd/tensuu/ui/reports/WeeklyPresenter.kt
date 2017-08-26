@@ -6,9 +6,7 @@ import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.data.model.StudentFields
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
-import tr.xip.scd.tensuu.util.ext.addChainable
-import tr.xip.scd.tensuu.util.ext.dayOfWeek
-import tr.xip.scd.tensuu.util.ext.stripToDate
+import tr.xip.scd.tensuu.util.ext.*
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Calendar.*
@@ -20,8 +18,8 @@ class WeeklyPresenter : RealmPresenter<WeeklyView>() {
         view?.setAdapter(
                 ReportsAdapter(
                         realm,
-                        cal.timeInMillis,
-                        cal.addChainable(DAY_OF_YEAR, 7).timeInMillis,
+                        cal.strippedTimestamp(),
+                        cal.addChainable(DAY_OF_YEAR, 7).strippedTimestamp().toEndOfTheDay(),
                         true,
                         realm.where(Student::class.java)
                                 .findAll()
@@ -75,8 +73,8 @@ class WeeklyPresenter : RealmPresenter<WeeklyView>() {
         endCal.timeInMillis = cal.timeInMillis
         endCal.add(DAY_OF_YEAR, 7)
         view?.getAdapter()?.updateDates(
-                cal.timeInMillis,
-                endCal.timeInMillis
+                cal.strippedTimestamp(),
+                endCal.strippedTimestamp().toEndOfTheDay()
         )
     }
 
