@@ -14,8 +14,8 @@ object RealmUtils {
     private val syncConfig by lazy {
         SyncConfiguration.Builder(
                 SyncUser.currentUser(),
-                "realm://${RealmConfig.URL}/~/tensuu"
-        ).schemaVersion(2).build()
+                "realm://${RealmConfig.URL}/~/tensuu-sdc-2017"
+        ).schemaVersion(1).build()
     }
 
     fun syncedRealm(): Realm {
