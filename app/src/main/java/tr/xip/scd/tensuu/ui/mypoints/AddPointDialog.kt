@@ -14,6 +14,7 @@ import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.data.model.User
 import tr.xip.scd.tensuu.data.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
+import tr.xip.scd.tensuu.local.Store
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 import tr.xip.scd.tensuu.util.ext.strippedTimestamp
@@ -37,6 +38,11 @@ object AddPointDialog {
         v.to.setSelection(0)
 
         val date = Calendar.getInstance()
+
+        // Load timestamp from Store if one was persisted less than an hour ago
+        if (Store.lastPointTimestampUpdated > System.currentTimeMillis() - 60 * 60 * 1000) {
+            date.timeInMillis = Store.lastPointAddTimestamp
+        }
 
         updateDate(v.date, date) // Initial
 
@@ -78,6 +84,8 @@ object AddPointDialog {
                         it.copyToRealm(point)
                     }
 
+                    persistDate(date)
+
                     dialog.dismiss()
                 }
             }
@@ -105,5 +113,9 @@ object AddPointDialog {
             v.toLayout.error = null
         }
         return true
+    }
+
+    private fun persistDate(date: Calendar) {
+        Store.lastPointAddTimestamp = date.strippedTimestamp()
     }
 }
