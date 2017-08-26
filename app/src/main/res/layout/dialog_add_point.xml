@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -79,4 +80,19 @@
             android:inputType="textCapSentences|textAutoComplete"
             android:nextFocusLeft="@+id/to" />
     </android.support.design.widget.TextInputLayout>
+
+    <tr.xip.scd.tensuu.ui.common.widget.VectorCompatTextView
+        android:id="@+id/addMultiple"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ripple_dark"
+        android:drawablePadding="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:text="@string/add_multiple"
+        android:textAllCaps="true"
+        app:drawableLeftCompat="@drawable/ic_people_grey_24dp" />
 </LinearLayout>

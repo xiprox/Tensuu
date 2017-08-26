@@ -2,6 +2,7 @@ package tr.xip.scd.tensuu.ui.mypoints
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.EditText
@@ -91,6 +92,11 @@ object AddPointDialog {
             }
         }
 
+        v.addMultiple.setOnClickListener {
+            context.startActivity(Intent(context, BatchPointsAddActivity::class.java))
+            dialog.dismiss()
+        }
+
         return dialog
     }
 
@@ -117,6 +123,7 @@ object AddPointDialog {
 
     private fun persistData(realm: Realm, date: Calendar, reason: String?) {
         Store.lastPointAddTimestamp = date.strippedTimestamp()
+        Store.lastPointTimestampUpdated = System.currentTimeMillis()
 
         reason?.let {
             val pointReason = PointReason()

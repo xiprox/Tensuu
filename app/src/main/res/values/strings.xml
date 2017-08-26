@@ -25,6 +25,8 @@
     <string name="title_add_points">Add Points</string>
     <string name="title_add_period">Add Period</string>
 
+    <string name="add_multiple">Add multiple</string>
+
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="password_confirm">Password (Confirm)</string>

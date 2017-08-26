@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title=" ">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/oval_primary_700"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp">
+
+                        <EditText
+                            android:id="@+id/amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="numberSigned"
+                            android:nextFocusDown="@+id/to"
+                            android:nextFocusRight="@+id/to"
+                            android:text="-"
+                            tools:ignore="HardcodedText"
+                            tools:text="10">
+
+                            <requestFocus />
+                        </EditText>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/amount"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/exit"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/ripple_dark_oval"
+                        android:scaleType="center"
+                        app:srcCompat="@drawable/ic_close_white_24dp" />
+
+                    <ImageView
+                        android:id="@+id/done"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/ripple_dark_oval"
+                        android:scaleType="center"
+                        app:srcCompat="@drawable/ic_check_white_24dp" />
+                </FrameLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <EditText
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center_vertical"
+                        android:hint="@string/date"
+                        android:inputType="datetime"
+                        android:longClickable="false"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textSize="16sp"
+                        tools:text="21/12/2017" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <tr.xip.scd.tensuu.ui.common.widget.VectorCompatAutoCompleteTextView
+                        android:id="@+id/reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/reason_optional"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="text"
+                        tools:text="Some reason" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_300"
+            android:orientation="horizontal">
+
+            <tr.xip.scd.tensuu.ui.common.widget.VectorCompatAutoCompleteTextView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawablePadding="16dp"
+                android:gravity="center_vertical"
+                android:hint="@string/search"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="text"
+                android:lines="1"
+                android:padding="16dp"
+                android:textSize="16sp"
+                app:drawableLeftCompat="@drawable/ic_search_white_24dp"
+                tools:ignore="RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/clear"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/ripple_dark_oval"
+                android:scaleType="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_close_white_24dp"
+                tools:visibility="visible" />
+        </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</android.support.design.widget.CoordinatorLayout>
