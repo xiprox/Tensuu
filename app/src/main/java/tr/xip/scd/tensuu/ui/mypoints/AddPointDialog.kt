@@ -51,6 +51,11 @@ object AddPointDialog {
             DatePickerDialog.new(context, date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH),
                     { y, m, d ->
                         date.set(y, m, d)
+                        val now = Calendar.getInstance()
+                        date.set(Calendar.HOUR_OF_DAY, now.get(Calendar.HOUR_OF_DAY))
+                        date.set(Calendar.MINUTE, now.get(Calendar.MINUTE))
+                        date.set(Calendar.SECOND, now.get(Calendar.SECOND))
+                        date.set(Calendar.MILLISECOND, now.get(Calendar.MILLISECOND))
                         updateDate(v.date, date)
                     }
             )
@@ -78,7 +83,7 @@ object AddPointDialog {
                     point.from = realm.where(User::class.java)
                             .equalTo(UserFields.EMAIL, Credentials.email)
                             .findFirst()
-                    point.timestamp = date.strippedTimestamp()
+                    point.timestamp = date.timeInMillis
                     point.reason = reason
 
                     realm.executeTransaction {

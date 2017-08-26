@@ -9,6 +9,10 @@ import tr.xip.scd.tensuu.local.Store
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 import tr.xip.scd.tensuu.util.ext.strippedTimestamp
+import java.util.Calendar.HOUR_OF_DAY
+import java.util.Calendar.MINUTE
+import java.util.Calendar.SECOND
+import java.util.Calendar.MILLISECOND
 import java.util.*
 
 class BatchPointsAddPresenter : RealmPresenter<BatchPointsAddView>() {
@@ -75,6 +79,11 @@ class BatchPointsAddPresenter : RealmPresenter<BatchPointsAddView>() {
                 date.get(Calendar.DAY_OF_MONTH),
                 { y, m, d ->
                     date.set(y, m, d)
+                    val now = Calendar.getInstance()
+                    date.set(HOUR_OF_DAY, now.get(HOUR_OF_DAY))
+                    date.set(MINUTE, now.get(MINUTE))
+                    date.set(SECOND, now.get(SECOND))
+                    date.set(MILLISECOND, now.get(MILLISECOND))
                     view?.setDate(date)
                 }
         )
@@ -90,7 +99,7 @@ class BatchPointsAddPresenter : RealmPresenter<BatchPointsAddView>() {
         point.from = realm.where(User::class.java).equalTo(UserFields.EMAIL, Credentials.email).findFirst()
         point.amount = mainAmount
         point.reason = reason
-        point.timestamp = date.strippedTimestamp()
+        point.timestamp = date.timeInMillis
         studentPoints.add(point)
         view?.getAdapter()?.notifyItemInserted(studentPoints.indexOf(point))
     }
