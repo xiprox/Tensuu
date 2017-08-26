@@ -20,6 +20,12 @@ class EditUserActivity : MvpActivity<EditUserView, EditUserPresenter>(), EditUse
 
         presenter.loadWith(intent.extras)
 
+        email.watchForChange {
+            runOnUiThread {
+                presenter.onEmailChanged(it)
+            }
+        }
+
         password.watchForChange {
             runOnUiThread {
                 presenter.onPasswordChanged(it)

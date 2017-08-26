@@ -33,6 +33,13 @@ class EditUserPresenter : RealmPresenter<EditUserView>() {
         }
     }
 
+    fun onEmailChanged(s: Editable?) {
+        if (s == null) return
+        realm.executeTransaction {
+            user?.email = s.toString()
+        }
+    }
+
     fun onPasswordChanged(s: Editable?) {
         if (s == null) return
         realm.executeTransaction {
