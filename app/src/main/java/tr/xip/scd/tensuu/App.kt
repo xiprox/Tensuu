@@ -1,5 +1,6 @@
 package tr.xip.scd.tensuu
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.support.v7.app.AppCompatDelegate
@@ -28,6 +29,7 @@ class App : Application() {
         /**
          * A static [Context] accessible from everywhere.
          */
+        @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
     }
 }
