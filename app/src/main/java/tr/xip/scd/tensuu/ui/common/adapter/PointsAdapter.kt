@@ -34,6 +34,13 @@ class PointsAdapter(data: OrderedRealmCollection<Point>) : RealmRecyclerViewAdap
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data?.get(position) ?: return
 
+        /* 60% alpha if my point and older than a week */
+        val now = System.currentTimeMillis()
+        val weekInMillis: Long = 7 * 24 * 60 * 60 * 1000
+        val olderThanWeek = item.from?.email == Credentials.email &&
+                (now - (item.timestamp ?: 0)) > weekInMillis
+        holder.itemView.alpha = if (olderThanWeek) 0.6f else 1f
+
         /* Amount */
         holder.itemView.amount.text = "${item.amount ?: ""}"
         if ((item.amount ?: 0) < 0) {
