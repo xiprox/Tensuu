@@ -35,7 +35,6 @@ object AddStudentDialog {
 
                 if (validateFields(v, ssid, firstName, lastName, grade)) {
                     val s = Student()
-                    s.id = (s.ssid?.substring(2, s.ssid?.length ?: 1 - 1) ?: "-1").toInt()
                     s.ssid = ssid
                     s.firstName = firstName
                     s.lastName = lastName
@@ -56,7 +55,7 @@ object AddStudentDialog {
                             ?.replace("š", "s")
 
                     realm.executeTransaction {
-                        it.copyToRealmOrUpdate(s)
+                        it.copyToRealm(s)
                     }
 
                     dialog.dismiss()

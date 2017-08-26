@@ -1,7 +1,5 @@
 package tr.xip.scd.tensuu.ui.common.adapter
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.RecyclerView
@@ -23,7 +21,6 @@ import tr.xip.scd.tensuu.util.RealmUtils.syncedRealm
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 import tr.xip.scd.tensuu.util.ext.isToday
 import tr.xip.scd.tensuu.util.ext.isYesterday
-import tr.xip.scd.tensuu.util.ext.toMonthDayYearString
 import java.text.SimpleDateFormat
 
 class PointsAdapter(data: OrderedRealmCollection<Point>) : RealmRecyclerViewAdapter<Point, PointsAdapter.ViewHolder>(data, true) {
@@ -116,10 +113,6 @@ class PointsAdapter(data: OrderedRealmCollection<Point>) : RealmRecyclerViewAdap
         holder.itemView.more.setOnClickListener {
             menu.show()
         }
-    }
-
-    override fun getItemId(index: Int): Long {
-        return (data?.get(index)?.id ?: 0).toLong()
     }
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v)

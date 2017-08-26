@@ -6,11 +6,7 @@ import io.realm.annotations.RealmClass
 
 @RealmClass
 open class Student : RealmObject() {
-    @PrimaryKey
-    var id: Int = 0
-
     var ssid: String? = null
-
     var firstName: String? = null
     var lastName: String? = null
     var grade: String? = null

@@ -46,9 +46,5 @@ class StudentsAdapter(
         holder.itemView.points.text = points.toString()
     }
 
-    override fun getItemId(index: Int): Long {
-        return (data?.get(index)?.id ?: 0).toLong()
-    }
-
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v)
 }

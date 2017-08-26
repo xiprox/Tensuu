@@ -13,7 +13,7 @@ class PeriodPresenter : RealmPresenter<PeriodView>() {
         period = realm.where(Period::class.java).findFirst()
         if (period == null) {
             realm.executeTransaction {
-                period = it.createObject(Period::class.java, 0)
+                period = it.createObject(Period::class.java)
             }
         }
 

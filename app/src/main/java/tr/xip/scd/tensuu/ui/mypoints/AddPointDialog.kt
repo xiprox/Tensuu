@@ -73,10 +73,9 @@ object AddPointDialog {
                             .findFirst()
                     point.timestamp = date.strippedTimestamp()
                     point.reason = reason
-                    point.id = point.createId()
 
                     realm.executeTransaction {
-                        it.copyToRealmOrUpdate(point)
+                        it.copyToRealm(point)
                     }
 
                     dialog.dismiss()

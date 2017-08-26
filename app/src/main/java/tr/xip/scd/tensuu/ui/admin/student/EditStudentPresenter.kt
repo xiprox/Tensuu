@@ -22,7 +22,6 @@ class EditStudentPresenter : RealmPresenter<EditStudentView>() {
                 .findFirst()
 
         if (student != null) {
-            view?.setId(student?.id.toString())
             view?.setSsid(student?.ssid)
             view?.setFirstName(student?.firstName)
             view?.setLastName(student?.lastName)

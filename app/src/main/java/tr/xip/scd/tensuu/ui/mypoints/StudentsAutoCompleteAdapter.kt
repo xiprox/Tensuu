@@ -32,8 +32,6 @@ class StudentsAutoCompleteAdapter(val realm: Realm, var data: OrderedRealmCollec
 
     override fun getItem(position: Int): Student? = data[position]
 
-    override fun getItemId(position: Int): Long = data[position].id.toLong()
-
     override fun getFilter(): Filter {
         return object : Filter() {
             var hasResults = false

@@ -44,7 +44,7 @@ object AddUserDialog {
                     user.canModify = modify
 
                     realm.executeTransaction {
-                        it.copyToRealmOrUpdate(user)
+                        it.copyToRealm(user)
                     }
 
                     dialog.dismiss()

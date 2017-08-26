@@ -6,9 +6,6 @@ import io.realm.annotations.RealmClass
 
 @RealmClass
 open class Point : RealmObject() {
-    @PrimaryKey
-    var id: Int = -1
-
     var to: Student? = null
     var from: User? = null
     var amount: Int? = null

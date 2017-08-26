@@ -53,10 +53,6 @@ class ReportsAdapter(
         holder.itemView.points.text = points.toString()
     }
 
-    override fun getItemId(index: Int): Long {
-        return (data?.get(index)?.id ?: 0).toLong()
-    }
-
     fun updateDates(begin: Long, end: Long) {
         beginTimestamp = begin
         endTimestamp = end

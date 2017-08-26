@@ -6,8 +6,6 @@ import io.realm.annotations.RealmClass
 
 @RealmClass
 open class Period : RealmObject() {
-    @PrimaryKey
-    var id: Int = 0
     var start: Long = 0
     var end: Long = 0
 }
