@@ -63,3 +63,21 @@ fun View.doOnLayout(body: () -> Unit) {
         }
     })
 }
+
+/**
+ * Cleans up special characters in Bosnia/Serbian/Croatian names.
+ */
+fun String.stripSpecialChars(): String {
+    return replace("Č", "C")
+            .replace("Ć", "C")
+            .replace("Ç", "C")
+            .replace("ć", "c")
+            .replace("č", "c")
+            .replace("ç", "c")
+            .replace("Ž", "Z")
+            .replace("Đ", "D")
+            .replace("đ", "d")
+            .replace("Š", "S")
+            .replace("ž", "z")
+            .replace("š", "s")
+}
