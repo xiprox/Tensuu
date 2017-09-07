@@ -9,7 +9,9 @@ import kotlinx.android.synthetic.main.dialog_add_student.view.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.data.model.StudentFields
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
+import tr.xip.scd.tensuu.util.ext.stripSpecialChars
 
 object AddStudentDialog {
 
@@ -28,31 +30,25 @@ object AddStudentDialog {
             val positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
 
             positive.setOnClickListener {
-                val ssid = v.ssid.text.toString()
                 val firstName = v.firstName.text.toString()
                 val lastName = v.lastName.text.toString()
                 val grade = v.grade.text.toString()
 
-                if (validateFields(v, ssid, firstName, lastName, grade)) {
+                if (validateFields(v, firstName, lastName, grade)) {
                     val s = Student()
-                    s.ssid = ssid
                     s.firstName = firstName
                     s.lastName = lastName
                     s.grade = grade
                     s.fullName = "$firstName $lastName"
-                    s.fullNameSimplified = s.fullName
-                            ?.replace("Č", "C")
-                            ?.replace("Ć", "C")
-                            ?.replace("Ç", "C")
-                            ?.replace("ć", "c")
-                            ?.replace("č", "c")
-                            ?.replace("ç", "c")
-                            ?.replace("Ž", "Z")
-                            ?.replace("ž", "z")
-                            ?.replace("Đ", "D")
-                            ?.replace("đ", "d")
-                            ?.replace("Š", "S")
-                            ?.replace("š", "s")
+                    s.fullNameSimplified = s.fullName?.stripSpecialChars()
+
+                    s.ssid = firstName.stripSpecialChars().substring(0, 2).toUpperCase() +
+                            grade +
+                            lastName.stripSpecialChars().substring(0, 2).toUpperCase()
+                    val foundIds = realm.where(Student::class.java)?.equalTo(StudentFields.SSID, s.ssid)?.findAll()?.size ?: 0
+                    if (foundIds != 0) {
+                        s.ssid = "${s.ssid}${foundIds + 1}"
+                    }
 
                     realm.executeTransaction {
                         it.copyToRealm(s)
@@ -66,15 +62,7 @@ object AddStudentDialog {
         return dialog
     }
 
-    private fun validateFields(v: View, ssid: String?, firstName: String?, lastName: String?, grade: String?): Boolean {
-        /* SSID */
-        if (ssid == null || ssid.trim().isEmpty()) {
-            v.ssidLayout.error = App.context.getString(R.string.error_invalid_ssid)
-            return false
-        } else {
-            v.ssidLayout.error = null
-        }
-
+    private fun validateFields(v: View, firstName: String?, lastName: String?, grade: String?): Boolean {
         /* First name */
         if (firstName == null || firstName.trim().isEmpty()) {
             v.firstNameLayout.error = App.context.getString(R.string.error_invalid_first_name)
