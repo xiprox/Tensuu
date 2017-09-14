@@ -3,6 +3,7 @@
     <string name="title_users">Users</string>
     <string name="title_activity_feed">Activity Log</string>
     <string name="title_students">Students</string>
+    <string name="title_lists">Lists</string>
     <string name="title_period">Period</string>
     <string name="title_my_points">My Points</string>
     <string name="title_reports">Reports</string>
@@ -11,6 +12,7 @@
     <string name="title_edit_student">Edit Student</string>
     <string name="title_add_user">Add User</string>
     <string name="title_edit_user">Edit User</string>
+    <string name="title_list_name">List Name</string>
 
     <string name="title_weekly">Weekly</string>
     <string name="title_custom">Custom</string>
@@ -19,6 +21,7 @@
 
     <string name="action_add">Add</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_rename">Rename</string>
     <string name="action_delete">Delete</string>
     <string name="action_share">Share</string>
     <string name="action_go_to_student">Go To Student</string>
@@ -64,12 +67,20 @@
     <string name="third_floor">3rd Floor</string>
     <string name="question_floor">\? Floor</string>
 
+    <string name="x_students">%1$d students</string>
+
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
 
     <string name="no_points">No points</string>
     <string name="no_points_you_havent_added">You haven\'t added any points yet.\nTap the <b>+</b> button!</string>
     <string name="no_points_student_has_no_points">Looks like this student is crystal clean</string>
+
+    <string name="no_lists">No lists</string>
+    <string name="no_lists_tap_plus_to_create">There are no lists yet.\nTap the <b>+</b> button to create one!</string>
+
+    <string name="no_students">No students</string>
+    <string name="no_students_in_list_tap_plus_to_add">There are no students in this list yet.\nTap the <b>+</b> button to add!</string>
 
     <string name="error_invalid_email">Invalid email</string>
     <string name="error_invalid_password">Invalid password</string>
@@ -103,8 +114,11 @@
 
     <string name="x_added_y_points_to_z"><![CDATA[<b>%1$s</b> added <b>%2$s</b> points to <b>%3$s</b>]]></string>
 
+    <string name="ok">OK</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
+    <string name="shared">Shared</string>
 
     <string name="retry">Retry</string>
 

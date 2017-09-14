@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.admin.AdminToolsActivity
+import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity
 import tr.xip.scd.tensuu.ui.login.LoginActivity
 import tr.xip.scd.tensuu.ui.mypoints.AddPointDialog
 
@@ -29,8 +30,8 @@ class MainActivity : MvpViewStateActivity<MainView, MainPresenter, MainViewState
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        addPoint.setOnClickListener {
-            presenter.onAddPointClicked()
+        add.setOnClickListener {
+            presenter.onAddClicked()
         }
 
         navigation.setOnNavigationItemSelectedListener({
@@ -52,7 +53,7 @@ class MainActivity : MvpViewStateActivity<MainView, MainPresenter, MainViewState
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
-        viewState.isFabShown = addPoint.isShown
+        viewState.isFabShown = add.isShown
         super.onSaveInstanceState(outState)
     }
 
@@ -70,18 +71,24 @@ class MainActivity : MvpViewStateActivity<MainView, MainPresenter, MainViewState
         return supportFragmentManager.findFragmentByTag(tag)
     }
 
+    override fun getCurrentNavigationId() = navigation.selectedItemId
+
     override fun showFab(show: Boolean) {
         var s = show
         if (!Credentials.canModify) s = false
         if (s) {
-            addPoint.show()
+            add.show()
         } else {
-            addPoint.hide()
+            add.hide()
         }
     }
 
     override fun showAddPointDialog(realm: Realm) {
         AddPointDialog.new(realm, this)?.show()
+    }
+
+    override fun showAddListDialog(realm: Realm) {
+        startActivity(ListAddActivity.getLaunchIntent())
     }
 
     override fun showSignOutDialog() {

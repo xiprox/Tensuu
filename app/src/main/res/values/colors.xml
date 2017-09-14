@@ -14,5 +14,7 @@
     <color name="minus">#F44336</color>
     <color name="plus">#4CAF50</color>
 
+    <color name="shared">#69F0AE</color>
+
     <color name="asd">#8a000000</color>
 </resources>

@@ -8,10 +8,12 @@ interface MainView : MvpView {
     fun setSelectedContentId(id: Int)
     fun setContentFragment(fragment: Fragment, tag: String)
     fun getFragmentByTag(tag: String): Fragment?
+    fun getCurrentNavigationId(): Int
 
     fun showFab(show: Boolean = true)
 
     fun showAddPointDialog(realm: Realm)
+    fun showAddListDialog(realm: Realm)
     fun showSignOutDialog()
     fun startLoginActivity()
     fun startAdminToolsActivity()

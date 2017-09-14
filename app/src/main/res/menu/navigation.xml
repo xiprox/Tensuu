@@ -17,6 +17,11 @@
         android:title="@string/title_students" />
 
     <item
+        android:id="@+id/navigation_lists"
+        android:icon="@drawable/ic_lists_24dp"
+        android:title="@string/title_lists" />
+
+    <item
         android:id="@+id/navigation_reports"
         android:icon="@drawable/ic_reports_24dp"
         android:title="@string/title_reports" />

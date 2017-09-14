@@ -40,5 +40,9 @@
             android:label="@string/title_edit_student" />
 
         <activity android:name=".ui.mypoints.BatchPointsAddActivity" />
+
+        <activity android:name=".ui.lists.add.ListAddActivity" />
+
+        <activity android:name=".ui.lists.detail.ListDetailActivity" />
     </application>
 </manifest>

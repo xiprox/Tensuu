@@ -13,6 +13,7 @@ import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.AnimateableFragment
 import tr.xip.scd.tensuu.ui.common.mvp.SafeViewMvpPresenter
 import tr.xip.scd.tensuu.ui.feed.FeedFragment
+import tr.xip.scd.tensuu.ui.lists.ListsFragment
 import tr.xip.scd.tensuu.ui.mypoints.MyPointsFragment
 import tr.xip.scd.tensuu.ui.reports.ReportsFragment
 import tr.xip.scd.tensuu.ui.students.StudentsFragment
@@ -44,8 +45,14 @@ class MainPresenter : SafeViewMvpPresenter<MainView>() {
         }
     }
 
-    fun onAddPointClicked() {
-        if (realm != null) view?.showAddPointDialog(realm!!)
+    fun onAddClicked() {
+        realm?.let {
+            when (view?.getCurrentNavigationId()) {
+                R.id.navigation_my_points -> view?.showAddPointDialog(it)
+                R.id.navigation_lists -> view?.showAddListDialog(it)
+                else -> return
+            }
+        }
     }
 
     fun onCreateOptionsMenu(menu: Menu?) {
@@ -77,6 +84,10 @@ class MainPresenter : SafeViewMvpPresenter<MainView>() {
             }
             R.id.navigation_students -> {
                 fragment = StudentsFragment()
+            }
+            R.id.navigation_lists -> {
+                fragment = ListsFragment()
+                shouldShowFab = true
             }
             R.id.navigation_reports -> {
                 fragment = ReportsFragment()
