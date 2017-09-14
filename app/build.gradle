@@ -5,8 +5,8 @@ apply plugin: 'realm-android'
 apply plugin: 'com.github.triplet.play'
 
 def versionMajor = 1
-def versionMinor = 2
-def versionPatch = 1
+def versionMinor = 3
+def versionPatch = 0
 def versionBuild = 0
 
 def keystoreAlias = project.property("tensuu.signing.upload.alias")
