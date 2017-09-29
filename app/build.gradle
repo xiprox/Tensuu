@@ -6,7 +6,7 @@ apply plugin: 'com.github.triplet.play'
 
 def versionMajor = 1
 def versionMinor = 3
-def versionPatch = 1
+def versionPatch = 2
 def versionBuild = 0
 
 def keystoreAlias = project.property("tensuu.signing.upload.alias")
