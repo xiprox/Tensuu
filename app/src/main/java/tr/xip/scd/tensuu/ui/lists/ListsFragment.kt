@@ -41,7 +41,7 @@ open class ListsFragment : MvpFragment<ListsView, ListsPresenter>(), ListsView, 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler.layoutManager = LinearLayoutManager(context)
-        presenter.init()
+        presenter.init(activity)
     }
 
     override fun setAdapter(value: ListsAdapter) {
