@@ -8,6 +8,7 @@ import io.realm.OrderedRealmCollection
 import io.realm.Realm
 import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_student.view.*
+import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.data.model.Period
 import tr.xip.scd.tensuu.data.model.Point
@@ -36,7 +37,10 @@ class StudentsAdapter(
         val item = data?.get(position) ?: return
 
         holder.itemView.fullName.text = item.fullName ?: "?"
-        holder.itemView.grade.text = item.grade ?: "?"
+        holder.itemView.grade.text = "?"
+        item.grade?.let {
+            holder.itemView.grade.text = App.context.getString(R.string.year_x, it)
+        }
 
         val points = 100 + realm.where(Point::class.java)
                 .equalTo(PointFields.TO.SSID, item.ssid)

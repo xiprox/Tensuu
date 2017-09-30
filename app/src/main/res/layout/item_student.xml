@@ -25,7 +25,7 @@
             android:id="@+id/grade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="4A" />
+            tools:text="Year 4" />
     </LinearLayout>
 
     <TextView
