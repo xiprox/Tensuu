@@ -15,6 +15,6 @@
         android:lines="1"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:textColor="?android:textColorPrimary"
+        android:textColor="@android:color/black"
         tools:text="List item" />
 </FrameLayout>
