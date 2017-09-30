@@ -42,6 +42,10 @@ class ListAddActivity : MvpActivity<ListAddView, ListAddPresenter>(), ListAddVie
             presenter.onNameChanged(it.toString())
         }
 
+        privateSwitch.setOnCheckedChangeListener { _, isChecked ->
+            presenter.onPrivateChanged(isChecked)
+        }
+
         search.watchForChange {
             presenter.onSearchTextChangedInstant(it)
         }

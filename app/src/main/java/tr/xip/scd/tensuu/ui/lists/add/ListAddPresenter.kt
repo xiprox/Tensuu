@@ -13,6 +13,7 @@ class ListAddPresenter : RealmPresenter<ListAddView>() {
     private val students = RealmList<Student>()
 
     private var name: String? = null
+    private var isPrivate = true
 
     fun init() {
         view?.setAdapter(StudentsAddingAdapter(students,
@@ -30,12 +31,17 @@ class ListAddPresenter : RealmPresenter<ListAddView>() {
         this.name = if (name.isBlank()) null else name
     }
 
+    fun onPrivateChanged(private: Boolean) {
+        isPrivate = private
+    }
+
     fun onDoneClicked() {
         realm.executeTransaction {
             val list = StudentList()
             list.name = name
             list.owner = it.where(User::class.java)
                     .equalTo(UserFields.EMAIL, Credentials.email).findFirst()
+            list.public = !isPrivate
             list.students = students
 
             // Append a number to the name if a list with the same name from this user already exists
