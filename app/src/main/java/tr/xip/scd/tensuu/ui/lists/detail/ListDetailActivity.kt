@@ -17,6 +17,7 @@ import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity
 import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
+import tr.xip.scd.tensuu.util.ext.toVisibility
 
 class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), ListDetailView {
 
@@ -72,6 +73,10 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
     override fun setName(value: String) {
         title = value
+    }
+
+    override fun setEditButtonShown(show: Boolean) {
+        edit.visibility = show.toVisibility()
     }
 
     override fun setAdapter(value: StudentsAddingAdapter) {

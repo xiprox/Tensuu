@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.MenuItem
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.data.model.*
+import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 
@@ -18,6 +19,7 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
 
         list?.let {
             view?.setName(it.name ?: "?")
+            view?.setEditButtonShown(it.owner?.email == Credentials.email)
             view?.setAdapter(StudentsAddingAdapter(it.students) { position ->
                 realm.executeTransaction {
                     list?.students?.let { students ->
