@@ -41,7 +41,7 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
         recycler.layoutManager = LinearLayoutManager(this)
 
-        add.setOnClickListener {
+        edit.setOnClickListener {
             Toast.makeText(this, "Soon™", Toast.LENGTH_SHORT).show() // TODO: Implement adding students
         }
 

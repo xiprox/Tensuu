@@ -67,12 +67,12 @@
     </ViewFlipper>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add"
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         app:fabSize="normal"
         app:layout_behavior="@string/floating_action_button_scroll_behavior"
-        app:srcCompat="@drawable/ic_add_white_24dp" />
+        app:srcCompat="@drawable/ic_edit_white_24dp" />
 </android.support.design.widget.CoordinatorLayout>
