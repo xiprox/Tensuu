@@ -15,6 +15,7 @@ import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
+import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity
 import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
 
 class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), ListDetailView {
@@ -42,7 +43,7 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
         recycler.layoutManager = LinearLayoutManager(this)
 
         edit.setOnClickListener {
-            Toast.makeText(this, "Soon™", Toast.LENGTH_SHORT).show() // TODO: Implement adding students
+            presenter.onEditClicked()
         }
 
         val extras = intent.extras
@@ -95,6 +96,10 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
                 })
                 .setNegativeButton(R.string.action_cancel, null)
                 .show()
+    }
+
+    override fun startListEditActivity(listName: String) {
+        startActivity(ListAddActivity.getLaunchIntent(listName))
     }
 
     override fun die() {

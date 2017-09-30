@@ -54,4 +54,9 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
         }
         view?.setName(newName)
     }
+
+    fun onEditClicked() {
+        if (list?.name == null) return
+        view?.startListEditActivity(list!!.name!!)
+    }
 }

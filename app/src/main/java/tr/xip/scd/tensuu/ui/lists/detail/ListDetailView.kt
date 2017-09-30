@@ -10,5 +10,7 @@ interface ListDetailView : MvpView {
 
     fun showRenameDialog()
 
+    fun startListEditActivity(listName: String)
+
     fun die()
 }

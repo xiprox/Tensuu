@@ -59,6 +59,24 @@ class ListAddActivity : MvpActivity<ListAddView, ListAddPresenter>(), ListAddVie
         }
 
         presenter.init()
+
+        intent.extras?.let {
+            it.getString(ARG_LIST_NAME)?.let {
+                presenter.loadList(it)
+            }
+        }
+    }
+
+    override fun setName(name: String) {
+        this.name.setText(name)
+    }
+
+    override fun setPrivate(private: Boolean) {
+        this.privateSwitch.isChecked = private
+    }
+
+    override fun showExitButton(show: Boolean) {
+        exit.visibility = show.toVisibility()
     }
 
     override fun setAdapter(value: StudentsAddingAdapter) {
@@ -92,10 +110,14 @@ class ListAddActivity : MvpActivity<ListAddView, ListAddPresenter>(), ListAddVie
     }
 
     companion object {
+        private val ARG_LIST_NAME = "list_name"
 
-        fun getLaunchIntent(): Intent {
-            val intent =
-            return Intent(App.context, ListAddActivity::class.java)
+        fun getLaunchIntent(listName: String? = null): Intent {
+            val intent = Intent(App.context, ListAddActivity::class.java)
+            listName?.let {
+                intent.putExtra(ARG_LIST_NAME, listName)
+            }
+            return intent
         }
     }
 }

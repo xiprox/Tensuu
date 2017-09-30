@@ -5,6 +5,9 @@ import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.mypoints.StudentsAutoCompleteAdapter
 
 interface ListAddView : MvpView {
+    fun setName(name: String)
+    fun setPrivate(private: Boolean)
+    fun showExitButton(show: Boolean)
     fun setAdapter(value: StudentsAddingAdapter)
     fun getAdapter(): StudentsAddingAdapter?
     fun setAutoCompleteAdapter(value: StudentsAutoCompleteAdapter)
