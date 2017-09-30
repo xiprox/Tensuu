@@ -120,7 +120,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
-    <string name="shared">Shared</string>
+    <string name="privacy_private">Private</string>
 
     <string name="retry">Retry</string>
 

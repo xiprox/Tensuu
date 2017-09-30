@@ -39,7 +39,7 @@ class ListsAdapter(
 
         holder.itemView.name.text = item.name ?: "?"
         holder.itemView.studentsCount.text = context.resources.getString(R.string.x_students, item.students.size)
-        holder.itemView.sharedTag.visibility = (item.public == true).toVisibility()
+        holder.itemView.privateTag.visibility = (item.public != true).toVisibility()
 
         /*
          * Options
