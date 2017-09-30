@@ -19,7 +19,7 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
 
         list?.let {
             view?.setName(it.name ?: "?")
-            view?.setEditButtonShown(it.owner?.email == Credentials.email)
+            view?.setEditMenuItemVisible(it.owner?.email == Credentials.email)
             view?.setAdapter(StudentsAddingAdapter(it.students) { position ->
                 realm.executeTransaction {
                     list?.students?.let { students ->
@@ -38,8 +38,8 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
     @SuppressLint("SimpleDateFormat")
     fun onOptionsItemSelected(item: MenuItem) {
         when (item.itemId) {
-            R.id.rename -> {
-                view?.showRenameDialog()
+            R.id.edit -> {
+                view?.startListEditActivity(list!!.name!!)
             }
             R.id.delete -> {
                 realm.executeTransaction {
@@ -59,6 +59,6 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
 
     fun onEditClicked() {
         if (list?.name == null) return
-        view?.startListEditActivity(list!!.name!!)
+        view?.startAddPointsActivity(list!!.students)
     }
 }

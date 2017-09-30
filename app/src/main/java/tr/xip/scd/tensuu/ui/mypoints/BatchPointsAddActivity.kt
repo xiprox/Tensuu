@@ -1,15 +1,18 @@
 package tr.xip.scd.tensuu.ui.mypoints
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_batch_point_add.*
+import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.util.ext.toVisibility
 import tr.xip.scd.tensuu.util.ext.watchForChange
 import tr.xip.scd.tensuu.util.ext.watchForChangeDebounce
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -67,6 +70,10 @@ class BatchPointsAddActivity : MvpActivity<BatchPointsAddView, BatchPointsAddPre
         }
 
         presenter.init()
+
+        intent?.extras?.let {
+            presenter.addStudents(it.getSerializable(ARG_STUDENT_IDS) as List<String>)
+        }
     }
 
     override fun setAdapter(value: BatchPointsStudentsAdapter) {
@@ -110,5 +117,15 @@ class BatchPointsAddActivity : MvpActivity<BatchPointsAddView, BatchPointsAddPre
 
     override fun die() {
         finish()
+    }
+
+    companion object {
+        private val ARG_STUDENT_IDS = "students"
+
+        fun getLaunchIntent(studentIds: List<String>): Intent {
+            val intent = Intent(App.context, BatchPointsAddActivity::class.java)
+            intent.putExtra(ARG_STUDENT_IDS, studentIds as Serializable)
+            return intent
+        }
     }
 }

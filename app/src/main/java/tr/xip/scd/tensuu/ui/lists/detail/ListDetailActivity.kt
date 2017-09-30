@@ -11,11 +11,14 @@ import android.widget.EditText
 import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_list_details.*
+import kotlinx.android.synthetic.main.activity_student.view.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
+import tr.xip.scd.tensuu.data.model.Student
 import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity
+import tr.xip.scd.tensuu.ui.mypoints.BatchPointsAddActivity
 import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
 import tr.xip.scd.tensuu.util.ext.toVisibility
 
@@ -26,6 +29,8 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
                 if (recycler?.adapter?.itemCount ?: 0 == 0) FLIPPER_NO_POINTS else FLIPPER_CONTENT
         )
     }
+
+    private var editMenuItem: MenuItem? = null
 
     override fun createPresenter(): ListDetailPresenter = ListDetailPresenter()
 
@@ -43,7 +48,7 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
         recycler.layoutManager = LinearLayoutManager(this)
 
-        edit.setOnClickListener {
+        addPoints.setOnClickListener {
             presenter.onEditClicked()
         }
 
@@ -62,6 +67,7 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.list_detail, menu)
+        editMenuItem = menu?.findItem(R.id.edit)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -75,8 +81,8 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
         title = value
     }
 
-    override fun setEditButtonShown(show: Boolean) {
-        edit.visibility = show.toVisibility()
+    override fun setEditMenuItemVisible(show: Boolean) {
+        editMenuItem?.isVisible = show
     }
 
     override fun setAdapter(value: StudentsAddingAdapter) {
@@ -105,6 +111,10 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
     override fun startListEditActivity(listName: String) {
         startActivity(ListAddActivity.getLaunchIntent(listName))
+    }
+
+    override fun startAddPointsActivity(students: List<Student>) {
+        startActivity(BatchPointsAddActivity.getLaunchIntent(students.map { it.ssid ?: "" }))
     }
 
     override fun die() {

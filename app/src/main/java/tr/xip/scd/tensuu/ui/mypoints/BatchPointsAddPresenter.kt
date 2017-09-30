@@ -44,6 +44,14 @@ class BatchPointsAddPresenter : RealmPresenter<BatchPointsAddView>() {
         view?.setDate(date)
     }
 
+    fun addStudents(studentIds: List<String>) {
+        val query = realm.where(Student::class.java)
+        studentIds.forEach {
+            query.or().equalTo(StudentFields.SSID, it)
+        }
+        query.findAll().forEach { onNewStudentSelected(it) }
+    }
+
     fun onDoneClicked() {
         realm.executeTransaction {
             for (point in studentPoints) {
