@@ -3,6 +3,8 @@ package tr.xip.scd.tensuu.ui.lists
 import android.annotation.SuppressLint
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import io.realm.OrderedRealmCollection
 import kotlinx.android.synthetic.main.item_student_list_add.view.*
@@ -12,6 +14,7 @@ import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 
 class StudentsAddingAdapter(
         val data: OrderedRealmCollection<Student>?,
+        private val showDeleteButton: Boolean = true,
         private val removeClickedListener: ((position: Int) -> Unit)? = null
 ) : RecyclerView.Adapter<StudentsAddingAdapter.ViewHolder>() {
 
@@ -26,6 +29,7 @@ class StudentsAddingAdapter(
         val view = holder.itemView
 
         view.student.text = item?.fullName ?: "?"
+        view.remove.visibility = if (showDeleteButton) VISIBLE else INVISIBLE
         view.remove.setOnClickListener {
             removeClickedListener?.invoke(position)
         }

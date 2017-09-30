@@ -20,7 +20,7 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
         list?.let {
             view?.setName(it.name ?: "?")
             view?.setEditMenuItemVisible(it.owner?.email == Credentials.email)
-            view?.setAdapter(StudentsAddingAdapter(it.students) { position ->
+            view?.setAdapter(StudentsAddingAdapter(it.students, false) { position ->
                 realm.executeTransaction {
                     list?.students?.let { students ->
                         view?.getAdapter()?.let { adapter ->
