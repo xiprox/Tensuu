@@ -3,17 +3,12 @@
 </p>
 
 <h3><p align="center">Tensuu</p></h3>
-
 <p align="center"><i>A real-time, collaborative, points management app for Android with Realm Mobile Platform at its core.
 </i></p>
 
 ![](graphics/screenshots/readme.png)
 <a href='https://www.youtube.com/watch?v=qVp7_TBTd_Y'><img alt='Demo video' src='https://cloud.githubusercontent.com/assets/2550945/25493068/446e3cd2-2b75-11e7-98f5-202477495d4f.jpg'/></a>
 <p align="right">
-<a href='https://f.ikxip.me/Tensuu-demo-v1.0.0.apk'><img height="48" alt='Get apk' src='https://cloud.githubusercontent.com/assets/2550945/25485185/43890fbc-2b5d-11e7-83d4-bde586e51ce7.png'/></a>
-<br>
-<b>Credentials</b>: admin@admin.com:admin
-</p>
 
 ## What is this?
 In the dormitory I work at, we have a points system for students where they get positive or negative points depending on their behavior and get awarded or sanctioned in two-month cycles. Every "supervisor" noting down the points they give in their own way and one person collecting and doing the math at the end of every week was obviously very tedious and prone to errors.
