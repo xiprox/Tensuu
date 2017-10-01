@@ -1,7 +1,7 @@
 package tr.xip.scd.tensuu.ui.admin
 
-import tr.xip.scd.tensuu.data.model.User
-import tr.xip.scd.tensuu.data.model.UserFields
+import tr.xip.scd.tensuu.realm.model.User
+import tr.xip.scd.tensuu.realm.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 

@@ -8,7 +8,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_batch_point_add.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.util.ext.toVisibility
 import tr.xip.scd.tensuu.util.ext.watchForChange
 import tr.xip.scd.tensuu.util.ext.watchForChangeDebounce

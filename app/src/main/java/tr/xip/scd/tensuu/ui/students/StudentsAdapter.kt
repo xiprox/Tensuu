@@ -10,10 +10,10 @@ import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_student.view.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Period
-import tr.xip.scd.tensuu.data.model.Point
-import tr.xip.scd.tensuu.data.model.PointFields
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Period
+import tr.xip.scd.tensuu.realm.model.Point
+import tr.xip.scd.tensuu.realm.model.PointFields
+import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 
 class StudentsAdapter(

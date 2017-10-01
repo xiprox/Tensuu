@@ -10,9 +10,9 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.dialog_add_point.view.*
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.*
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.local.Store
+import tr.xip.scd.tensuu.realm.model.*
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 import tr.xip.scd.tensuu.util.ext.strippedTimestamp

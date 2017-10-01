@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.hannesdorfmann.mosby3.mvp.MvpFragment
 import kotlinx.android.synthetic.main.fragment_users.*
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.User
+import tr.xip.scd.tensuu.realm.model.User
 
 class UsersFragment : MvpFragment<UsersView, UsersPresenter>(), UsersView {
     override fun createPresenter(): UsersPresenter = UsersPresenter()

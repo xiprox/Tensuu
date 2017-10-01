@@ -8,7 +8,7 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.dialog_add_user.view.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.User
+import tr.xip.scd.tensuu.realm.model.User
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 
 object AddUserDialog {

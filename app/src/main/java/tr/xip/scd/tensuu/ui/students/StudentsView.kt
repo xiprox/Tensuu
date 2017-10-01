@@ -2,8 +2,7 @@ package tr.xip.scd.tensuu.ui.students
 
 import android.view.View
 import com.hannesdorfmann.mosby3.mvp.MvpView
-import io.realm.OrderedRealmCollection
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 
 interface StudentsView : MvpView {
     fun setSearchExitVisible(value: Boolean = true)

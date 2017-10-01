@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import io.realm.OrderedRealmCollection
 import kotlinx.android.synthetic.main.item_student_list_add.view.*
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 
 class StudentsAddingAdapter(

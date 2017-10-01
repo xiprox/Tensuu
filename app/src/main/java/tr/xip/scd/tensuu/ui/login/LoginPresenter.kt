@@ -7,12 +7,12 @@ import io.realm.SyncCredentials
 import io.realm.SyncUser
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.User
-import tr.xip.scd.tensuu.data.model.UserFields
+import tr.xip.scd.tensuu.realm.model.User
+import tr.xip.scd.tensuu.realm.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
-import tr.xip.scd.tensuu.local.RealmConfig
+import tr.xip.scd.tensuu.realm.RealmConfig
 import tr.xip.scd.tensuu.ui.common.mvp.SafeViewMvpPresenter
-import tr.xip.scd.tensuu.util.RealmUtils
+import tr.xip.scd.tensuu.realm.util.RealmUtils
 
 class LoginPresenter : SafeViewMvpPresenter<LoginView>() {
     private var realmLoginTask: RealmAsyncTask? = null

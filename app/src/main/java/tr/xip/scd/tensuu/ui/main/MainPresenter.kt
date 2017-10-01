@@ -7,8 +7,8 @@ import android.view.MenuItem
 import io.realm.Realm
 import io.realm.SyncUser
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.User
-import tr.xip.scd.tensuu.data.model.UserFields
+import tr.xip.scd.tensuu.realm.model.User
+import tr.xip.scd.tensuu.realm.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.AnimateableFragment
 import tr.xip.scd.tensuu.ui.common.mvp.SafeViewMvpPresenter
@@ -17,7 +17,7 @@ import tr.xip.scd.tensuu.ui.lists.ListsFragment
 import tr.xip.scd.tensuu.ui.mypoints.MyPointsFragment
 import tr.xip.scd.tensuu.ui.reports.ReportsFragment
 import tr.xip.scd.tensuu.ui.students.StudentsFragment
-import tr.xip.scd.tensuu.util.RealmUtils
+import tr.xip.scd.tensuu.realm.util.RealmUtils
 
 class MainPresenter : SafeViewMvpPresenter<MainView>() {
     private var realm: Realm? = null

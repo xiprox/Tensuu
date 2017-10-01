@@ -1,6 +1,6 @@
 package tr.xip.scd.tensuu.ui.admin.period
 
-import tr.xip.scd.tensuu.data.model.Period
+import tr.xip.scd.tensuu.realm.model.Period
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 import tr.xip.scd.tensuu.util.ext.setTimeInMillisAndReturn
 import tr.xip.scd.tensuu.util.ext.strippedTimestamp

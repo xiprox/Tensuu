@@ -1,9 +1,9 @@
 package tr.xip.scd.tensuu.ui.reports
 
 import io.realm.Sort
-import tr.xip.scd.tensuu.data.model.Period
-import tr.xip.scd.tensuu.data.model.Student
-import tr.xip.scd.tensuu.data.model.StudentFields
+import tr.xip.scd.tensuu.realm.model.Period
+import tr.xip.scd.tensuu.realm.model.Student
+import tr.xip.scd.tensuu.realm.model.StudentFields
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 import tr.xip.scd.tensuu.util.ext.*
 import java.text.SimpleDateFormat

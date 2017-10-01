@@ -14,10 +14,10 @@ import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_point.view.*
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Point
+import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.student.StudentActivity
-import tr.xip.scd.tensuu.util.RealmUtils.syncedRealm
+import tr.xip.scd.tensuu.realm.util.RealmUtils.syncedRealm
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 import tr.xip.scd.tensuu.util.ext.isToday
 import tr.xip.scd.tensuu.util.ext.isYesterday

@@ -5,7 +5,6 @@ import android.app.Application
 import android.content.Context
 import android.support.v7.app.AppCompatDelegate
 import io.realm.Realm
-import io.realm.RealmConfiguration
 
 class App : Application() {
 

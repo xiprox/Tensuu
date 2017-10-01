@@ -1,8 +1,8 @@
 package tr.xip.scd.tensuu.ui.mypoints
 
 import io.realm.Sort
-import tr.xip.scd.tensuu.data.model.Point
-import tr.xip.scd.tensuu.data.model.PointFields
+import tr.xip.scd.tensuu.realm.model.Point
+import tr.xip.scd.tensuu.realm.model.PointFields
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.common.adapter.PointsAdapter
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter

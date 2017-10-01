@@ -2,8 +2,8 @@ package tr.xip.scd.tensuu.ui.lists.add
 
 import android.text.Editable
 import io.realm.Case
-import tr.xip.scd.tensuu.data.model.*
 import tr.xip.scd.tensuu.local.Credentials
+import tr.xip.scd.tensuu.realm.model.*
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.mypoints.StudentsAutoCompleteAdapter

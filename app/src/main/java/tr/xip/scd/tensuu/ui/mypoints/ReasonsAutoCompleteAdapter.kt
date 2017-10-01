@@ -11,8 +11,8 @@ import io.realm.RealmBaseAdapter
 import kotlinx.android.synthetic.main.item_simple_list.view.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.PointReason
-import tr.xip.scd.tensuu.data.model.PointReasonFields
+import tr.xip.scd.tensuu.realm.model.PointReason
+import tr.xip.scd.tensuu.realm.model.PointReasonFields
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 
 class ReasonsAutoCompleteAdapter(val realm: Realm, var data: OrderedRealmCollection<PointReason>)
