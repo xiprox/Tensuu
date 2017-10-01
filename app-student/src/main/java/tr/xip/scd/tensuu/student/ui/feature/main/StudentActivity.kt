@@ -25,7 +25,6 @@ class StudentActivity : MvpActivity<StudentView, StudentPresenter>(), StudentVie
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         recycler.layoutManager = LinearLayoutManager(this)
 
@@ -37,8 +36,8 @@ class StudentActivity : MvpActivity<StudentView, StudentPresenter>(), StudentVie
         return true
     }
 
-    override fun setTitle(value: String) {
-        title = value
+    override fun setName(value: String) {
+        name.text = value
     }
 
     override fun setSsid(value: String?) {

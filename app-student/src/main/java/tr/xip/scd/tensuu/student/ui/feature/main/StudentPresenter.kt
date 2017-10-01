@@ -34,7 +34,7 @@ class StudentPresenter : RealmPresenter<StudentView>() {
         val period = realm.where(Period::class.java).findFirst()
 
         if (student != null && period != null) {
-            view?.setTitle(student?.fullName ?: "?")
+            view?.setName(student?.fullName ?: "?")
             view?.setSsid(student?.ssid)
             view?.setGrade(student?.grade)
             view?.setFloor(student?.floor)
