@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.triplet.play'
+
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = Integer.parseInt(System.getenv('TRAVIS_BUILD_NUMBER') ?: "1")
+
+def keystoreAlias = System.getenv('keystoreAlias') ?: project.property("tensuu.student.signing.upload.alias")
+def keystorePassword = System.getenv('keystorePassword') ?: project.property("tensuu.student.signing.upload.password")
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    playAccountConfigs {
+        defaultAccountConfig {
+            jsonFile = file('../xip-key.json')
+        }
+    }
+
+    defaultConfig {
+        applicationId "tr.xip.scd.tensuu.student"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+
+        playAccountConfig = playAccountConfigs.defaultAccountConfig
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../keystore-upload.jks")
+            storePassword keystorePassword
+            keyAlias keystoreAlias
+            keyPassword keystorePassword
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+play {
+    track = 'alpha'
+}
+
+dependencies {
+    compile project(':common-app')
+}
+
+apply plugin: 'com.google.gms.google-services'

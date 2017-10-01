@@ -7,8 +7,8 @@ import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.local.Store
 import tr.xip.scd.tensuu.realm.model.*
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
-import tr.xip.scd.tensuu.util.ext.strippedTimestamp
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ext.strippedTimestamp
 import java.util.Calendar.HOUR_OF_DAY
 import java.util.Calendar.MINUTE
 import java.util.Calendar.SECOND

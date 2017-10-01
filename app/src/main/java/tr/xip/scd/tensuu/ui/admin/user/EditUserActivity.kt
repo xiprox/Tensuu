@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_user.*
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.util.ext.watchForChange
+import tr.xip.scd.tensuu.common.ext.watchForChange
 
 class EditUserActivity : MvpActivity<EditUserView, EditUserPresenter>(), EditUserView {
     override fun createPresenter(): EditUserPresenter = EditUserPresenter()

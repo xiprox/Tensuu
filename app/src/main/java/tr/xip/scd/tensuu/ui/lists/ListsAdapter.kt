@@ -15,8 +15,8 @@ import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.StudentList
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.lists.detail.ListDetailActivity
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.toVisibility
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.toVisibility
 
 class ListsAdapter(
         val context: Context,

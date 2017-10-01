@@ -18,9 +18,9 @@ import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.student.StudentActivity
 import tr.xip.scd.tensuu.realm.util.RealmUtils.syncedRealm
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.isToday
-import tr.xip.scd.tensuu.util.ext.isYesterday
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.isToday
+import tr.xip.scd.tensuu.common.ext.isYesterday
 import java.text.SimpleDateFormat
 
 class PointsAdapter(data: OrderedRealmCollection<Point>) : RealmRecyclerViewAdapter<Point, PointsAdapter.ViewHolder>(data, true) {

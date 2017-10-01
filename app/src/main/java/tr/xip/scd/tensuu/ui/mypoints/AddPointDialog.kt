@@ -14,8 +14,8 @@ import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.local.Store
 import tr.xip.scd.tensuu.realm.model.*
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.strippedTimestamp
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.strippedTimestamp
 import java.text.SimpleDateFormat
 import java.util.*
 

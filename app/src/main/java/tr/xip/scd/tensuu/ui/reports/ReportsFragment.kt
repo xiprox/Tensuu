@@ -9,9 +9,9 @@ import android.view.animation.DecelerateInterpolator
 import kotlinx.android.synthetic.main.fragment_reports.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.common.AnimateableFragment
-import tr.xip.scd.tensuu.util.OnPageChangeListenerAdapter
-import tr.xip.scd.tensuu.util.ext.doOnLayout
-import tr.xip.scd.tensuu.util.ext.toPx
+import tr.xip.scd.tensuu.common.util.OnPageChangeListenerAdapter
+import tr.xip.scd.tensuu.common.ext.doOnLayout
+import tr.xip.scd.tensuu.common.ext.toPx
 
 /**
  * Pretty much just a container. No MVP here.

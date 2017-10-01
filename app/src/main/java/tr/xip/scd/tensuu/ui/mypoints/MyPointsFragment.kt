@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.fragment_my_points.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.common.AnimateableFragment
 import tr.xip.scd.tensuu.ui.common.adapter.PointsAdapter
-import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
-import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
-import tr.xip.scd.tensuu.util.ext.toPx
+import tr.xip.scd.tensuu.common.ui.view.RecyclerViewAdapterDataObserver
+import tr.xip.scd.tensuu.common.ext.setDisplayedChildSafe
+import tr.xip.scd.tensuu.common.ext.toPx
 
 class MyPointsFragment : MvpFragment<MyPointsView, MyPointsPresenter>(), MyPointsView, AnimateableFragment {
     override fun createPresenter(): MyPointsPresenter = MyPointsPresenter()

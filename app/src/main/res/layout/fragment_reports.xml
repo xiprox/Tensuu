@@ -74,7 +74,7 @@
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp">
 
-                <tr.xip.scd.tensuu.ui.common.widget.VectorCompatTextView
+                <tr.xip.scd.tensuu.common.ui.widget.VectorCompatTextView
                     android:id="@+id/rangeStartSelector"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                     android:layout_width="24dp"
                     android:layout_height="wrap_content" />
 
-                <tr.xip.scd.tensuu.ui.common.widget.VectorCompatTextView
+                <tr.xip.scd.tensuu.common.ui.widget.VectorCompatTextView
                     android:id="@+id/rangeEndSelector"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

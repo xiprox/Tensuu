@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_edit_student.*
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.util.ext.watchForChange
+import tr.xip.scd.tensuu.common.ext.watchForChange
 
 class EditStudentActivity : MvpActivity<EditStudentView, EditStudentPresenter>(), EditStudentView {
     override fun createPresenter(): EditStudentPresenter = EditStudentPresenter()

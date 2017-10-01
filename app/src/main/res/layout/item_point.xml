@@ -39,7 +39,7 @@
             android:textSize="16sp"
             tools:text="John Smith" />
 
-        <tr.xip.scd.tensuu.ui.common.widget.VectorCompatTextView
+        <tr.xip.scd.tensuu.common.ui.widget.VectorCompatTextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             app:drawableLeftCompat="@drawable/ic_point_time_grey_12dp"
             tools:text="25 March, 2017 at 12:34 AM" />
 
-        <tr.xip.scd.tensuu.ui.common.widget.VectorCompatTextView
+        <tr.xip.scd.tensuu.common.ui.widget.VectorCompatTextView
             android:id="@+id/from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

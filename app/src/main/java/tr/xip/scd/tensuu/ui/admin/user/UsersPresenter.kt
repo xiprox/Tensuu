@@ -1,7 +1,7 @@
 package tr.xip.scd.tensuu.ui.admin.user
 
 import tr.xip.scd.tensuu.realm.model.User
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 
 class UsersPresenter : RealmPresenter<UsersView>() {
 

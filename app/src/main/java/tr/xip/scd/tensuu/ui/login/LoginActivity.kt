@@ -7,8 +7,8 @@ import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.main.MainActivity
-import tr.xip.scd.tensuu.util.ext.toVisibility
-import tr.xip.scd.tensuu.util.ext.watchForChange
+import tr.xip.scd.tensuu.common.ext.toVisibility
+import tr.xip.scd.tensuu.common.ext.watchForChange
 
 class LoginActivity : MvpActivity<LoginView, LoginPresenter>(), LoginView {
     override fun createPresenter(): LoginPresenter = LoginPresenter()

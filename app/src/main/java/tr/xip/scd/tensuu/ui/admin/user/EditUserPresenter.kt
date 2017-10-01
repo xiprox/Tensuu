@@ -7,7 +7,7 @@ import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.User
 import tr.xip.scd.tensuu.realm.model.UserFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 
 class EditUserPresenter : RealmPresenter<EditUserView>() {
     private var user: User? = null

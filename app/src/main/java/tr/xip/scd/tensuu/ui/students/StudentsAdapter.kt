@@ -14,7 +14,7 @@ import tr.xip.scd.tensuu.realm.model.Period
 import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.realm.model.PointFields
 import tr.xip.scd.tensuu.realm.model.Student
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
 
 class StudentsAdapter(
         val realm: Realm,

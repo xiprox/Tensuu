@@ -10,9 +10,9 @@ import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.mypoints.StudentsAutoCompleteAdapter
-import tr.xip.scd.tensuu.util.ext.toVisibility
-import tr.xip.scd.tensuu.util.ext.watchForChange
-import tr.xip.scd.tensuu.util.ext.watchForChangeDebounce
+import tr.xip.scd.tensuu.common.ext.toVisibility
+import tr.xip.scd.tensuu.common.ext.watchForChange
+import tr.xip.scd.tensuu.common.ext.watchForChangeDebounce
 
 class ListAddActivity : MvpActivity<ListAddView, ListAddPresenter>(), ListAddView {
 

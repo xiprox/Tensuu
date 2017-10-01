@@ -6,7 +6,7 @@ import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.realm.model.StudentList
 import tr.xip.scd.tensuu.realm.model.StudentListFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 
 class ListDetailPresenter : RealmPresenter<ListDetailView>() {

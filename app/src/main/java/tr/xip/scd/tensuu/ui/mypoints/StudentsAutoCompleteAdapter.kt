@@ -13,7 +13,7 @@ import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.realm.model.StudentFields
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
 
 class StudentsAutoCompleteAdapter(val realm: Realm, var data: OrderedRealmCollection<Student>)
     : RealmBaseAdapter<Student>(data), Filterable {

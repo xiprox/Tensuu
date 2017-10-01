@@ -10,7 +10,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpFragment
 import kotlinx.android.synthetic.main.fragment_feed.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.common.AnimateableFragment
-import tr.xip.scd.tensuu.util.ext.toPx
+import tr.xip.scd.tensuu.common.ext.toPx
 
 open class FeedFragment : MvpFragment<FeedView, FeedPresenter>(), FeedView, AnimateableFragment {
 

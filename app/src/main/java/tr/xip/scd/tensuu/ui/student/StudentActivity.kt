@@ -13,9 +13,9 @@ import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_student.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.common.adapter.PointsAdapter
-import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
-import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
-import tr.xip.scd.tensuu.util.ext.toVisibility
+import tr.xip.scd.tensuu.common.ui.view.RecyclerViewAdapterDataObserver
+import tr.xip.scd.tensuu.common.ext.setDisplayedChildSafe
+import tr.xip.scd.tensuu.common.ext.toVisibility
 import java.text.SimpleDateFormat
 
 class StudentActivity : MvpActivity<StudentView, StudentPresenter>(), StudentView {

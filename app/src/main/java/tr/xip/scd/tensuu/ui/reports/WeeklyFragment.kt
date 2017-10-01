@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.fragment_reports.*
 import kotlinx.android.synthetic.main.fragment_reports.view.*
 import kotlinx.android.synthetic.main.fragment_reports_page.*
 import tr.xip.scd.tensuu.R
+import tr.xip.scd.tensuu.common.ext.toPx
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.ui.student.StudentActivity
-import tr.xip.scd.tensuu.util.ext.*
 
 class WeeklyFragment : MvpFragment<WeeklyView, WeeklyPresenter>(), WeeklyView {
     lateinit private var controlView: View
