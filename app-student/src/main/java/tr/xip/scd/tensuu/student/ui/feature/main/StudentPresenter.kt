@@ -31,16 +31,13 @@ class StudentPresenter : RealmPresenter<StudentView>() {
                 .equalTo(StudentFields.PASSWORD, Credentials.password)
                 .findFirst()
 
-        val period = realm.where(Period::class.java).findFirst()
-
-        if (student != null && period != null) {
+        if (student != null) {
             view?.setName(student?.fullName ?: "?")
             view?.setSsid(student?.ssid)
             view?.setGrade(student?.grade)
             view?.setFloor(student?.floor)
-
-            setPoints(student?.ssid, period.start, period.end)
-            setAdapter(student?.ssid, period.start, period.end)
+            setPoints()
+            setAdapter()
 
             /* Notify for the initial state */
             view?.notifyDateChanged()
@@ -50,30 +47,33 @@ class StudentPresenter : RealmPresenter<StudentView>() {
         }
     }
 
-    private fun setPoints(ssid: String?, rangeStart: Long, rangeEnd: Long) {
+    private fun setPoints() {
+        val period = realm.where(Period::class.java).findFirst()!!
         var query = realm.where(Point::class.java)
-                .equalTo(PointFields.TO.SSID, ssid)
-        if (rangeStart != 0L && rangeEnd != 0L) {
+                .equalTo(PointFields.TO.SSID, student?.ssid)
+        if (period.start != 0L && period.end != 0L) {
             query = query
-                    .greaterThanOrEqualTo(PointFields.TIMESTAMP, rangeStart)
-                    .lessThanOrEqualTo(PointFields.TIMESTAMP, rangeEnd)
+                    .greaterThanOrEqualTo(PointFields.TIMESTAMP, period.start)
+                    .lessThanOrEqualTo(PointFields.TIMESTAMP, period.end)
         }
         view?.setPoints(
                 100 + query.sum(PointFields.AMOUNT).toInt()
         ).toString()
     }
 
-    private fun setAdapter(ssid: String?, rangeStart: Long, rangeEnd: Long) {
-        var query = realm.where(Point::class.java).equalTo(PointFields.TO.SSID, ssid)
-        if (rangeStart != 0L && rangeEnd != 0L) {
+    private fun setAdapter() {
+        val period = realm.where(Period::class.java).findFirst()!!
+        var query = realm.where(Point::class.java).equalTo(PointFields.TO.SSID, student?.ssid)
+        if (period.start != 0L && period.end != 0L) {
             query = query
-                    .greaterThan(PointFields.TIMESTAMP, rangeStart)
-                    .lessThan(PointFields.TIMESTAMP, rangeEnd)
+                    .greaterThan(PointFields.TIMESTAMP, period.start)
+                    .lessThan(PointFields.TIMESTAMP, period.end)
         }
         view?.setAdapter(PointsAdapter(query.findAll()))
     }
 
     fun onDataChanged() {
+        setPoints()
         view?.setFlipperChild(
                 if (view?.getAdapter()?.itemCount == 0) {
                     StudentActivity.FLIPPER_NO_POINTS
