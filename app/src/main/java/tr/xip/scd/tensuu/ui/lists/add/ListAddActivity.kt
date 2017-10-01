@@ -7,7 +7,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_list_add.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.mypoints.StudentsAutoCompleteAdapter
 import tr.xip.scd.tensuu.util.ext.toVisibility

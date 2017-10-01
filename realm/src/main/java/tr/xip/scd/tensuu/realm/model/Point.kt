@@ -1,7 +1,6 @@
-package tr.xip.scd.tensuu.data.model
+package tr.xip.scd.tensuu.realm.model
 
 import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmClass
 
 @RealmClass

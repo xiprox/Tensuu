@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import io.realm.SyncUser
 import tr.xip.scd.tensuu.App.Companion.context
-import tr.xip.scd.tensuu.data.model.User
+import tr.xip.scd.tensuu.realm.model.User
 
 /**
  * A SharedPreferences manager object that takes care of storing user credentials.

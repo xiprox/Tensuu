@@ -12,7 +12,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_list_details.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity

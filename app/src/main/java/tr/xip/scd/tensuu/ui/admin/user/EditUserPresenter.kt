@@ -5,8 +5,8 @@ import android.text.Editable
 import android.view.MenuItem
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.User
-import tr.xip.scd.tensuu.data.model.UserFields
+import tr.xip.scd.tensuu.realm.model.User
+import tr.xip.scd.tensuu.realm.model.UserFields
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 
 class EditUserPresenter : RealmPresenter<EditUserView>() {

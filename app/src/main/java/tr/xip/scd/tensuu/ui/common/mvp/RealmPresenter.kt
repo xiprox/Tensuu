@@ -2,7 +2,7 @@ package tr.xip.scd.tensuu.ui.common.mvp
 
 import com.hannesdorfmann.mosby3.mvp.MvpView
 import io.realm.Realm
-import tr.xip.scd.tensuu.util.RealmUtils.syncedRealm
+import tr.xip.scd.tensuu.realm.util.RealmUtils.syncedRealm
 
 open class RealmPresenter<T : MvpView> : SafeViewMvpPresenter<T>() {
     internal lateinit var realm: Realm

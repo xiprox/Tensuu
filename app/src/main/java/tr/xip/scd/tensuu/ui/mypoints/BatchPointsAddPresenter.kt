@@ -3,9 +3,9 @@ package tr.xip.scd.tensuu.ui.mypoints
 import android.content.Context
 import android.text.Editable
 import io.realm.Case
-import tr.xip.scd.tensuu.data.model.*
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.local.Store
+import tr.xip.scd.tensuu.realm.model.*
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
 import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
 import tr.xip.scd.tensuu.util.ext.strippedTimestamp

@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import com.hannesdorfmann.mosby3.mvp.MvpFragment
-import io.realm.OrderedRealmCollection
 import kotlinx.android.synthetic.main.fragment_students.*
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.ui.common.AnimateableFragment
 import tr.xip.scd.tensuu.ui.student.StudentActivity
 import tr.xip.scd.tensuu.util.ext.*

@@ -1,7 +1,7 @@
 package tr.xip.scd.tensuu.ui.admin.student
 
 import android.content.Intent
-import tr.xip.scd.tensuu.data.model.Student
+import tr.xip.scd.tensuu.realm.model.Student
 
 class StudentsFragment : tr.xip.scd.tensuu.ui.students.StudentsFragment() {
 

@@ -11,9 +11,8 @@ import io.realm.OrderedRealmCollection
 import io.realm.Realm
 import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_list.view.*
-import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.StudentList
+import tr.xip.scd.tensuu.realm.model.StudentList
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.ui.lists.detail.ListDetailActivity
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater

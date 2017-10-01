@@ -11,7 +11,7 @@ import io.realm.Realm
 import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_feed.view.*
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Point
+import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 import java.text.SimpleDateFormat
 

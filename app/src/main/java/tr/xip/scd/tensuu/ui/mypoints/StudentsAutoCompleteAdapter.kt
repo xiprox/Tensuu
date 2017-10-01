@@ -4,7 +4,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import android.widget.TextView
 import io.realm.Case
 import io.realm.OrderedRealmCollection
 import io.realm.Realm
@@ -12,8 +11,8 @@ import io.realm.RealmBaseAdapter
 import kotlinx.android.synthetic.main.item_simple_list.view.*
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
-import tr.xip.scd.tensuu.data.model.Student
-import tr.xip.scd.tensuu.data.model.StudentFields
+import tr.xip.scd.tensuu.realm.model.Student
+import tr.xip.scd.tensuu.realm.model.StudentFields
 import tr.xip.scd.tensuu.util.ext.getLayoutInflater
 
 class StudentsAutoCompleteAdapter(val realm: Realm, var data: OrderedRealmCollection<Student>)
