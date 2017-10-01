@@ -25,13 +25,13 @@
                 android:orientation="horizontal">
 
                 <FrameLayout
-                    android:layout_width="172dp"
-                    android:layout_height="172dp"
-                    android:layout_marginBottom="-42dp"
+                    android:layout_width="164dp"
+                    android:layout_height="164dp"
+                    android:layout_marginBottom="-36dp"
                     android:layout_marginLeft="-22dp"
-                    android:layout_marginTop="-42dp"
+                    android:layout_marginTop="-36dp"
                     android:background="@drawable/oval_primary_700"
-                    android:paddingLeft="102dp">
+                    android:paddingLeft="96dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -68,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
+                    android:layout_marginRight="24dp"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
                     tools:text="John Smith" />
