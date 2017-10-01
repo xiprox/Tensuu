@@ -19,6 +19,7 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
 
         list?.let {
             view?.setName(it.name ?: "?")
+            view?.setOwner(it.owner?.name)
             view?.setEditMenuItemVisible(it.owner?.email == Credentials.email)
             view?.setAdapter(StudentsAddingAdapter(it.students, false) { position ->
                 realm.executeTransaction {

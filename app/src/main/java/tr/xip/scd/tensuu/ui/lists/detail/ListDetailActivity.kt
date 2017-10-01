@@ -81,6 +81,12 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
         title = value
     }
 
+    override fun setOwner(value: String?) {
+        value?.let {
+            supportActionBar?.subtitle = getString(R.string.created_by_x, it)
+        }
+    }
+
     override fun setEditMenuItemVisible(show: Boolean) {
         editMenuItem?.isVisible = show
     }

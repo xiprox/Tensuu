@@ -66,6 +66,8 @@
 
     <string name="year_x">Year %s</string>
 
+    <string name="created_by_x">Created by %s</string>
+
     <string name="second_floor">2nd Floor</string>
     <string name="third_floor">3rd Floor</string>
     <string name="question_floor">\? Floor</string>
