@@ -8,10 +8,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
-import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_list_details.*
-import kotlinx.android.synthetic.main.activity_student.view.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.data.model.Student
@@ -20,7 +18,6 @@ import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity
 import tr.xip.scd.tensuu.ui.mypoints.BatchPointsAddActivity
 import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
-import tr.xip.scd.tensuu.util.ext.toVisibility
 
 class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), ListDetailView {
 
@@ -48,8 +45,8 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
         recycler.layoutManager = LinearLayoutManager(this)
 
-        addPoints.setOnClickListener {
-            presenter.onEditClicked()
+        fab.setOnClickListener {
+            presenter.onFabClicked()
         }
 
         val extras = intent.extras
@@ -89,6 +86,10 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
 
     override fun setEditMenuItemVisible(show: Boolean) {
         editMenuItem?.isVisible = show
+    }
+
+    override fun setFabIcon(resId: Int) {
+        fab.setImageResource(resId)
     }
 
     override fun setAdapter(value: StudentsAddingAdapter) {

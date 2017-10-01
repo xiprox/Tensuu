@@ -21,6 +21,13 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
             view?.setName(it.name ?: "?")
             view?.setOwner(it.owner?.name)
             view?.setEditMenuItemVisible(it.owner?.email == Credentials.email)
+            view?.setFabIcon(
+                    if (it.students.size == 0) {
+                        R.drawable.ic_add_white_24dp
+                    } else {
+                        R.drawable.ic_my_points_white_24dp
+                    }
+            )
             view?.setAdapter(StudentsAddingAdapter(it.students, false) { position ->
                 realm.executeTransaction {
                     list?.students?.let { students ->
@@ -58,8 +65,12 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
         view?.setName(newName)
     }
 
-    fun onEditClicked() {
+    fun onFabClicked() {
         if (list?.name == null) return
-        view?.startAddPointsActivity(list!!.students)
+        if (list?.students?.size ?: 0 == 0) {
+            view?.startListEditActivity(list!!.name!!)
+        } else {
+            view?.startAddPointsActivity(list!!.students)
+        }
     }
 }

@@ -8,6 +8,7 @@ interface ListDetailView : MvpView {
     fun setName(value: String)
     fun setOwner(value: String?)
     fun setEditMenuItemVisible(show: Boolean)
+    fun setFabIcon(resId: Int)
     fun setAdapter(value: StudentsAddingAdapter)
     fun getAdapter(): StudentsAddingAdapter?
 
