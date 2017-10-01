@@ -51,7 +51,7 @@
 
     <string name="points">Points</string>
 
-    <string name="smart_school_id">Smart School ID</string>
+    <string name="smart_school_id">@string/id</string>
     <string name="grade">Grade</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
