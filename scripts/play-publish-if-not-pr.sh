@@ -6,6 +6,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ $TRAVIS_BRANCH == 'master' ]; the
   ./gradlew assembleRelease publishApkRelease
 else
   echo "Assembling Debug"
-  cp app/google-services-dummy.json app/google-services.json
+  cp google-services-dummy.json app/google-services.json
+  cp google-services-dummy.json app-student/google-services.json
   ./gradlew assembleDebug
 fi
