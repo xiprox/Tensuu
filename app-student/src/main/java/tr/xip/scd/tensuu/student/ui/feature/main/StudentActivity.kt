@@ -3,7 +3,10 @@ package tr.xip.scd.tensuu.student.ui.feature.main
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View.GONE
 import android.widget.Toast
 import com.hannesdorfmann.mosby3.mvp.MvpActivity
@@ -36,6 +39,17 @@ class StudentActivity : MvpActivity<StudentView, StudentPresenter>(), StudentVie
     override fun onSupportNavigateUp(): Boolean {
         super.onBackPressed()
         return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.student, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        presenter.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
     override fun setName(value: String) {
@@ -81,6 +95,18 @@ class StudentActivity : MvpActivity<StudentView, StudentPresenter>(), StudentVie
 
     override fun getAdapter(): PointsAdapter {
         return recycler.adapter as PointsAdapter
+    }
+
+    override fun showSignOutDialog() {
+        AlertDialog.Builder(this)
+                .setTitle(R.string.title_sign_out_question)
+                .setMessage(R.string.info_are_you_sure_sign_out)
+                .setPositiveButton(R.string.yes, { _, _ ->
+                    presenter.onSignedOut()
+                })
+                .setNegativeButton(R.string.no, null)
+                .create()
+                .show()
     }
 
     override fun showToast(text: String) {

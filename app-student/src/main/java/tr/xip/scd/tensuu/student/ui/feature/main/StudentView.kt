@@ -13,6 +13,7 @@ interface StudentView : MvpView {
     fun setAdapter(value: PointsAdapter)
     fun getAdapter(): PointsAdapter?
 
+    fun showSignOutDialog()
     fun showToast(text: String)
     fun notifyDateChanged()
 

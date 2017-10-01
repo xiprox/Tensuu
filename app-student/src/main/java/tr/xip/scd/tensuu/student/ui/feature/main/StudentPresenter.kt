@@ -1,9 +1,14 @@
 package tr.xip.scd.tensuu.student.ui.feature.main
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.view.MenuItem
 import io.realm.SyncUser
 import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 import tr.xip.scd.tensuu.realm.model.*
+import tr.xip.scd.tensuu.student.R
 import tr.xip.scd.tensuu.student.ui.feature.local.Credentials
+import java.text.SimpleDateFormat
 
 class StudentPresenter : RealmPresenter<StudentView>() {
     private var student: Student? = null
@@ -81,6 +86,21 @@ class StudentPresenter : RealmPresenter<StudentView>() {
                     StudentActivity.FLIPPER_CONTENT
                 }
         )
+    }
+
+    fun onSignedOut() {
+        Credentials.logout()
+        view?.startLoginActivity()
+        view?.die()
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun onOptionsItemSelected(item: MenuItem?) {
+        when (item?.itemId) {
+            R.id.action_sign_out -> {
+                view?.showSignOutDialog()
+            }
+        }
     }
 
     fun goToLogin() {
