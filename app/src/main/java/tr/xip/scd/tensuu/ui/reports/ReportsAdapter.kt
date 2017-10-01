@@ -13,7 +13,7 @@ import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.realm.model.PointFields
 import tr.xip.scd.tensuu.realm.model.Student
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
 
 class ReportsAdapter(
         val realm: Realm,

@@ -10,8 +10,8 @@ import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.realm.model.StudentFields
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.stripSpecialChars
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.stripSpecialChars
 
 object AddStudentDialog {
 

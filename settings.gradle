@@ -1,1 +1,1 @@
-include ':app', ':realm'
+include ':app', ':realm', ':app-student', ':common-app'

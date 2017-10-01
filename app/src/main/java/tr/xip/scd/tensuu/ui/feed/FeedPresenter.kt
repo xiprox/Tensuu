@@ -4,7 +4,7 @@ import io.realm.Sort
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.realm.model.PointFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 
 class FeedPresenter : RealmPresenter<FeedView>() {
 

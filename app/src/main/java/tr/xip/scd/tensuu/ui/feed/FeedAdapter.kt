@@ -12,7 +12,7 @@ import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_feed.view.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Point
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
 import java.text.SimpleDateFormat
 
 class FeedAdapter(

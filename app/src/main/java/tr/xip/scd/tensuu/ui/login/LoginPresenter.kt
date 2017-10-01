@@ -11,7 +11,7 @@ import tr.xip.scd.tensuu.realm.model.User
 import tr.xip.scd.tensuu.realm.model.UserFields
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.realm.RealmConfig
-import tr.xip.scd.tensuu.ui.common.mvp.SafeViewMvpPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.SafeViewMvpPresenter
 import tr.xip.scd.tensuu.realm.util.RealmUtils
 
 class LoginPresenter : SafeViewMvpPresenter<LoginView>() {

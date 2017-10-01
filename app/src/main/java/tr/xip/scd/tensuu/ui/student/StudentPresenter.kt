@@ -10,7 +10,7 @@ import tr.xip.scd.tensuu.realm.model.Point
 import tr.xip.scd.tensuu.realm.model.PointFields
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.realm.model.StudentFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 import tr.xip.scd.tensuu.ui.common.adapter.PointsAdapter
 import java.text.SimpleDateFormat
 

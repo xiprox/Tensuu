@@ -13,11 +13,11 @@ import kotlinx.android.synthetic.main.activity_list_details.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Student
-import tr.xip.scd.tensuu.ui.common.view.RecyclerViewAdapterDataObserver
+import tr.xip.scd.tensuu.common.ui.view.RecyclerViewAdapterDataObserver
 import tr.xip.scd.tensuu.ui.lists.StudentsAddingAdapter
 import tr.xip.scd.tensuu.ui.lists.add.ListAddActivity
 import tr.xip.scd.tensuu.ui.mypoints.BatchPointsAddActivity
-import tr.xip.scd.tensuu.util.ext.setDisplayedChildSafe
+import tr.xip.scd.tensuu.common.ext.setDisplayedChildSafe
 
 class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), ListDetailView {
 

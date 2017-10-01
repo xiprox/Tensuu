@@ -4,7 +4,7 @@ import android.content.Context
 import tr.xip.scd.tensuu.local.Credentials
 import tr.xip.scd.tensuu.realm.model.StudentList
 import tr.xip.scd.tensuu.realm.model.StudentListFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 
 class ListsPresenter : RealmPresenter<ListsView>() {
 

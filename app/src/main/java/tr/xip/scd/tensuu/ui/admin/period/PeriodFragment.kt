@@ -8,7 +8,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpFragment
 import kotlinx.android.synthetic.main.fragment_period.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.ui.common.DatePickerDialog
-import tr.xip.scd.tensuu.util.ext.stripToDate
+import tr.xip.scd.tensuu.common.ext.stripToDate
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Calendar.*

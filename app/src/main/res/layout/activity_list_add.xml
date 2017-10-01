@@ -78,7 +78,7 @@
             android:background="@color/primary_300"
             android:orientation="horizontal">
 
-            <tr.xip.scd.tensuu.ui.common.widget.VectorCompatAutoCompleteTextView
+            <tr.xip.scd.tensuu.common.ui.widget.VectorCompatAutoCompleteTextView
                 android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

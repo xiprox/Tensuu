@@ -3,10 +3,10 @@ package tr.xip.scd.tensuu.ui.reports
 import io.realm.Sort
 import tr.xip.scd.tensuu.App.Companion.context
 import tr.xip.scd.tensuu.R
+import tr.xip.scd.tensuu.common.ext.*
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.realm.model.StudentFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
-import tr.xip.scd.tensuu.util.ext.*
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Calendar.*

@@ -9,8 +9,8 @@ import io.realm.RealmRecyclerViewAdapter
 import kotlinx.android.synthetic.main.item_user.view.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.User
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.toVisibility
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.toVisibility
 
 class UsersAdapter(
         data: OrderedRealmCollection<User>,

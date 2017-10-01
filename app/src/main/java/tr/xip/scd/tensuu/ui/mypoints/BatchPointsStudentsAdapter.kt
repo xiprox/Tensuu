@@ -8,8 +8,8 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.item_student_batch_point_add.view.*
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Point
-import tr.xip.scd.tensuu.util.ext.getLayoutInflater
-import tr.xip.scd.tensuu.util.ext.watchForChange
+import tr.xip.scd.tensuu.common.ext.getLayoutInflater
+import tr.xip.scd.tensuu.common.ext.watchForChange
 
 class BatchPointsStudentsAdapter(
         private val realm: Realm,

@@ -7,7 +7,7 @@ import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Student
 import tr.xip.scd.tensuu.realm.model.StudentFields
-import tr.xip.scd.tensuu.ui.common.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
 
 class EditStudentPresenter : RealmPresenter<EditStudentView>() {
     private var student: Student? = null

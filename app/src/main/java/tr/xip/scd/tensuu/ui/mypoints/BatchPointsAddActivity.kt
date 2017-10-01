@@ -9,9 +9,9 @@ import kotlinx.android.synthetic.main.activity_batch_point_add.*
 import tr.xip.scd.tensuu.App
 import tr.xip.scd.tensuu.R
 import tr.xip.scd.tensuu.realm.model.Student
-import tr.xip.scd.tensuu.util.ext.toVisibility
-import tr.xip.scd.tensuu.util.ext.watchForChange
-import tr.xip.scd.tensuu.util.ext.watchForChangeDebounce
+import tr.xip.scd.tensuu.common.ext.toVisibility
+import tr.xip.scd.tensuu.common.ext.watchForChange
+import tr.xip.scd.tensuu.common.ext.watchForChangeDebounce
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
