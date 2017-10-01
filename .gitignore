@@ -46,3 +46,4 @@ captures/
 google-services.json
 RealmConfig.kt
 xip-key.json
+secrets.tar

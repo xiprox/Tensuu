@@ -1,0 +1,41 @@
+language: android
+jdk: oraclejdk8
+
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-25.0.2
+    - android-25
+    - extra-android-m2repository
+
+branches:
+  only:
+    - "master"
+
+before_install:
+  - chmod +x gradlew
+  - chmod -R +x scripts
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then openssl aes-256-cbc -K $encrypted_b14c8cd3daa4_key -iv $encrypted_b14c8cd3daa4_iv -in secrets.tar.enc -out secrets.tar -d; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then tar xvf secrets.tar; fi'
+
+script: ./scripts/play-publish-if-not-pr.sh
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+
+env:
+  global:
+    - secure: "rqWautFXqQjEFiBUj9BFoQy2GFoNK8A/ESyVE8Hc5Fxa3uuCKD7rJOF42ifUkxQxh0VIQDJIMtRVMBeqNJw9KSrfEt2oB9onnJy9JlrKzPvW8IeO8DxUSPMzQlTmHW8oJmjq/OtZa95+uiwXm5c9OQ0Rp3yPc4WnsCSN8fxPZOL/JDOoH8K8sY5ThULp2M7xFDaY0yZZbjwgy9OCEXrkMVfFFqY5yIbkuzGFIKnEzmG6yEtvXrQ2QiPzGRhpeoxWbNi3wOy43syndgU1bQcZZ2UvcYrPB/yQC4x2nhonYLd60wIBvV61VQLCJky6c2+mUTD9VgAEN0MpRSPRXYIrbkeHfNFGf2YHal9gzyNrvfHeDNVOnXnDRUF3XkRKnXxW/mxOoH85oYFFoVhsHxn4eCnsCQL2oBG+9Uwku5aGOjK+iRkacpsrPuEnh+34NVWlnB+f/gHBwZEjLPE3PjXNQzbAjzIPHFLGqlk7s2n/Wr7h+UW70ETU5mYbsh4qbFvy9WGZSZDmWbG4fz8f1aGaYOYLr5mq8c7a+s8L6pRoZi4ZsKTLg3ryMtWCzmZ0eNi3Cj/Wu/JxC49efLUEG6b6gbBeRH0ksK0m5/8YWoSsEWrYn2CR0T/KBDxI/4t0XxaVDSmiCiX3KncmfYFAzHRpLdKRayT1/EHUJEhc0QNTbw8="
+    - secure: "uCPmw8n9x7e3acfl5UMS/UeAcmsVZYtkNlaV5rA78LI4IcdukaAwOT+zQ5XoUqoiZ45tK+6h3U4DjvoQAgH6+5hW1JC0jogmDn00Hf8WZp6Cp/faxJ8yTn5QdjEghZSKdHpGPsiPjOM8ERlssbPmbQVmDibptrpYFbOxTAg4IPc5oeE98YV5zlZhc1wWreSeegujLK0XOuK6OD2MGoo4OdJoE2YxqNpMuNMSMtNOrkawRd88PJHbg5njef5Qi3lkJSgcerOjhfnlXOWRiB8iaN9bBQ9KMZJoSgHYahH7vMrmkxL/FbH9lUb7CZ8eb6neVwJkjFmR+Jf2pC4LzJXhskO2/u7jFCtbdwDaCmT/JhhOgkbl/F9XMK0dlwR4AqVzfhRgt3tDvaXQoL46/zFdBACgh0FjN5JwPeNBYJQuAqai7YOlGnoawvPGBhUQOlGZ19PQ2CfRAyZ7XI5uhv2dCF5xuQkYUqhYj1dgeVuArbdOTg5SG20okoFW8sCCXjIrcjNDuQSoNNLPlv8bfDpdGCIOqZFnHJpQOpB01ScND03HfceRVIUdLvNgd9JBQYnY3DvwtHNn2fPgtrnxPKl2A4lpO559WddsyXYNYWYUjHOSxgjd2jQ6enMyE5OnUV/xuKPEK7aEw7zDtiqK3oeykFU7WCUqjHJ8TCmd2Pfe61E="
+
