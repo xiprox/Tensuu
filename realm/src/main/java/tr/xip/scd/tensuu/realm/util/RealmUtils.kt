@@ -9,7 +9,7 @@ import tr.xip.scd.tensuu.realm.RealmConfig
 object RealmUtils {
     private val syncConfig by lazy {
         SyncConfiguration.Builder(SyncUser.currentUser(), "realm://${RealmConfig.URL}/~/tensuu-sdc-2017")
-                .schemaVersion(3)
+                .schemaVersion(4)
                 .build()
     }
 

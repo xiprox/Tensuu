@@ -32,6 +32,7 @@
     <string name="add_multiple">Add multiple</string>
 
     <string name="email">Email</string>
+    <string name="id">ID</string>
     <string name="password">Password</string>
     <string name="password_confirm">Password (Confirm)</string>
     <string name="sign_in">Sign In</string>
@@ -50,7 +51,6 @@
 
     <string name="points">Points</string>
 
-    <string name="id">ID</string>
     <string name="smart_school_id">Smart School ID</string>
     <string name="grade">Grade</string>
     <string name="first_name">First name</string>
@@ -86,6 +86,7 @@
     <string name="no_students">No students</string>
     <string name="no_students_in_list_tap_plus_to_add">There are no students in this list yet.\nTap the <b>+</b> button to add!</string>
 
+    <string name="error_invalid_id">Invalid ID</string>
     <string name="error_invalid_email">Invalid email</string>
     <string name="error_invalid_password">Invalid password</string>
     <string name="error_invalid_password_not_matched">Passwords don\'t match</string>

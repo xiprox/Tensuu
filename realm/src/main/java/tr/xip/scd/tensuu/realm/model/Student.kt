@@ -13,4 +13,5 @@ open class Student : RealmObject() {
     var floor: Int? = null
     var fullName: String? = null
     var fullNameSimplified: String? = null
+    var password: String? = null
 }
