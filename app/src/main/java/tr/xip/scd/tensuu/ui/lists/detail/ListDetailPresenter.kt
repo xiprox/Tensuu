@@ -20,7 +20,6 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
         list?.let {
             view?.setName(it.name ?: "?")
             view?.setOwner(it.owner?.name)
-            view?.setEditMenuItemVisible(it.owner?.email == Credentials.email)
             view?.setFabIcon(
                     if (it.students.size == 0) {
                         R.drawable.ic_add_white_24dp
@@ -41,6 +40,10 @@ class ListDetailPresenter : RealmPresenter<ListDetailView>() {
                 }
             })
         }
+    }
+
+    fun onPrepareOptionsMenu() {
+        view?.setEditMenuItemVisible(Credentials.canModify || Credentials.isAdmin)
     }
 
     @SuppressLint("SimpleDateFormat")

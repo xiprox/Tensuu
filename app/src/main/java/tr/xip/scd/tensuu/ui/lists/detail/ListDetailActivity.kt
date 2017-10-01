@@ -68,6 +68,11 @@ class ListDetailActivity : MvpActivity<ListDetailView, ListDetailPresenter>(), L
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        presenter.onPrepareOptionsMenu()
+        return super.onPrepareOptionsMenu(menu)
+    }
+
     @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         presenter.onOptionsItemSelected(item)
