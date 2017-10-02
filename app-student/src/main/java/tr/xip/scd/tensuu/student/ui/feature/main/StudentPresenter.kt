@@ -1,21 +1,30 @@
 package tr.xip.scd.tensuu.student.ui.feature.main
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.view.MenuItem
+import io.realm.Realm
 import io.realm.SyncUser
-import tr.xip.scd.tensuu.common.ui.mvp.RealmPresenter
+import tr.xip.scd.tensuu.common.ui.mvp.SafeViewMvpPresenter
 import tr.xip.scd.tensuu.realm.model.*
+import tr.xip.scd.tensuu.realm.util.RealmUtils.syncedRealm
 import tr.xip.scd.tensuu.student.R
 import tr.xip.scd.tensuu.student.ui.feature.local.Credentials
-import java.text.SimpleDateFormat
 
-class StudentPresenter : RealmPresenter<StudentView>() {
+class StudentPresenter : SafeViewMvpPresenter<StudentView>() {
+    private var realm: Realm? = null
+
     private var student: Student? = null
+
+    override fun detachView(retainInstance: Boolean) {
+        super.detachView(retainInstance)
+        realm?.close()
+    }
 
     fun init() {
         if (SyncUser.currentUser() != null) {
-            val student = realm.where(Student::class.java)
+            realm = syncedRealm()
+
+            val student = realm!!.where(Student::class.java)
                     .equalTo(StudentFields.SSID, Credentials.id)
                     .equalTo(StudentFields.PASSWORD, Credentials.password)
                     .findFirst()
@@ -31,7 +40,9 @@ class StudentPresenter : RealmPresenter<StudentView>() {
     }
 
     private fun load() {
-        student = realm.where(Student::class.java)
+        if (realm == null) return
+
+        student = realm!!.where(Student::class.java)
                 .equalTo(StudentFields.SSID, Credentials.id)
                 .equalTo(StudentFields.PASSWORD, Credentials.password)
                 .findFirst()
@@ -53,8 +64,10 @@ class StudentPresenter : RealmPresenter<StudentView>() {
     }
 
     private fun setPoints() {
-        val period = realm.where(Period::class.java).findFirst()!!
-        var query = realm.where(Point::class.java)
+        if (realm == null) return
+
+        val period = realm!!.where(Period::class.java).findFirst()!!
+        var query = realm!!.where(Point::class.java)
                 .equalTo(PointFields.TO.SSID, student?.ssid)
         if (period.start != 0L && period.end != 0L) {
             query = query
@@ -67,8 +80,10 @@ class StudentPresenter : RealmPresenter<StudentView>() {
     }
 
     private fun setAdapter() {
-        val period = realm.where(Period::class.java).findFirst()!!
-        var query = realm.where(Point::class.java).equalTo(PointFields.TO.SSID, student?.ssid)
+        if (realm == null) return
+
+        val period = realm!!.where(Period::class.java).findFirst()!!
+        var query = realm!!.where(Point::class.java).equalTo(PointFields.TO.SSID, student?.ssid)
         if (period.start != 0L && period.end != 0L) {
             query = query
                     .greaterThan(PointFields.TIMESTAMP, period.start)
