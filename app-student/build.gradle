@@ -59,6 +59,7 @@ play {
 
 dependencies {
     compile project(':common-app')
+    compile "com.google.firebase:firebase-messaging:$firebase_version"
 }
 
 apply plugin: 'com.google.gms.google-services'

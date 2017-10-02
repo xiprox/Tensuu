@@ -104,6 +104,13 @@ class LoginPresenter : SafeViewMvpPresenter<LoginView>() {
 
         if (student != null) {
             Credentials.loadFrom(student)
+
+            Credentials.notificationsToken?.let { token ->
+                realm.executeTransaction {
+                    student.notificationToken = token
+                }
+            }
+
             realm.close()
             view?.startMainActivity()
             view?.die()

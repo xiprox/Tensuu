@@ -14,6 +14,7 @@ object Credentials {
 
     private val KEY_ID = "id"
     private val KEY_PASSWORD = "password"
+    private val KEY_NOTIFICATIONS_TOKEN = "notifications_token"
 
     private var prefs: SharedPreferences
 
@@ -28,6 +29,10 @@ object Credentials {
     var password: String?
         set(value) = prefs.edit().putString(KEY_PASSWORD, value).apply()
         get() = prefs.getString(KEY_PASSWORD, null)
+
+    var notificationsToken: String?
+        set(value) = prefs.edit().putString(KEY_NOTIFICATIONS_TOKEN, value).apply()
+        get() = prefs.getString(KEY_NOTIFICATIONS_TOKEN, null)
 
     fun loadFrom(student: Student) {
         id = student.ssid
