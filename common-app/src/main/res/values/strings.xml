@@ -79,6 +79,7 @@
     <string name="no_points">No points</string>
     <string name="no_points_you_havent_added">You haven\'t added any points yet.\nTap the <b>+</b> button!</string>
     <string name="no_points_student_has_no_points">Looks like this student is crystal clean</string>
+    <string name="no_points_looks_like_you_have_no_points_yet">Looks like you have no points yet</string>
 
     <string name="no_lists">No lists</string>
     <string name="no_lists_tap_plus_to_create">There are no lists yet.\nTap the <b>+</b> button to create one!</string>

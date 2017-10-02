@@ -175,7 +175,6 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingTop="86dp"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
@@ -196,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/no_points_student_has_no_points"
+                android:text="@string/no_points_looks_like_you_have_no_points_yet"
                 android:textSize="16sp" />
         </LinearLayout>
     </ViewFlipper>
