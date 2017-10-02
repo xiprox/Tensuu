@@ -87,7 +87,9 @@ class ListAddPresenter : RealmPresenter<ListAddView>() {
     private fun onStudentRemoveClicked(position: Int) {
         val adapter = view?.getAdapter() ?: return
         val lastIndex = adapter.itemCount - 1
-        adapter.data?.removeAt(position)
+        realm.executeTransaction {
+            adapter.data?.removeAt(position)
+        }
         adapter.notifyItemRemoved(position)
         adapter.notifyItemRangeChanged(position, lastIndex)
     }
