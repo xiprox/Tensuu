@@ -4,6 +4,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpView
 
 interface EditStudentView : MvpView {
     fun setSsid(value: String?)
+    fun setPassword(value: String?)
     fun setFirstName(value: String?)
     fun setLastName(value: String?)
     fun setGrade(value: String?)

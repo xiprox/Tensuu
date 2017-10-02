@@ -23,6 +23,7 @@ class EditStudentPresenter : RealmPresenter<EditStudentView>() {
 
         if (student != null) {
             view?.setSsid(student?.ssid)
+            view?.setPassword(student?.password)
             view?.setFirstName(student?.firstName)
             view?.setLastName(student?.lastName)
             view?.setGrade(student?.grade)
@@ -62,6 +63,13 @@ class EditStudentPresenter : RealmPresenter<EditStudentView>() {
         realm.executeTransaction {
             student?.firstName = s.toString()
             recalcFullName(student)
+        }
+    }
+
+    fun onPasswordChanged(s: Editable?) {
+        if (s == null) return
+        realm.executeTransaction {
+            student?.password = s.toString()
         }
     }
 

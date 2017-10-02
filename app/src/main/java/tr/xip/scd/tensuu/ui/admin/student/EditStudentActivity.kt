@@ -32,6 +32,12 @@ class EditStudentActivity : MvpActivity<EditStudentView, EditStudentPresenter>()
             }
         }
 
+        password.watchForChange {
+            runOnUiThread {
+                presenter.onPasswordChanged(it)
+            }
+        }
+
         lastName.watchForChange {
             runOnUiThread {
                 presenter.onLastNameChanged(it)
@@ -53,6 +59,10 @@ class EditStudentActivity : MvpActivity<EditStudentView, EditStudentPresenter>()
 
     override fun setSsid(value: String?) {
         ssid.setText(value)
+    }
+
+    override fun setPassword(value: String?) {
+        password.setText(value)
     }
 
     override fun setFirstName(value: String?) {
