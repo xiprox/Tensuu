@@ -39,5 +39,8 @@ dependencies {
 
     compile 'com.hannesdorfmann.mosby3:viewstate:3.0.4'
 
+    compile "com.google.firebase:firebase-core:$firebase_version"
+    compile "com.google.firebase:firebase-crash:$firebase_version"
+
     compile project(':realm')
 }
