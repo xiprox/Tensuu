@@ -128,5 +128,5 @@
 
     <string name="retry">Retry</string>
 
-    <string name="floating_action_button_scroll_behavior">tr.xip.scd.tensuu.common.view.ScrollAwareFabBehavior</string>
+    <string name="floating_action_button_scroll_behavior">tr.xip.scd.tensuu.common.ui.view.ScrollAwareFabBehavior</string>
 </resources>
