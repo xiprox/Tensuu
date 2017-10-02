@@ -5,8 +5,11 @@ import io.realm.Realm
 import tr.xip.scd.tensuu.realm.util.RealmUtils.syncedRealm
 
 open class RealmPresenter<T : MvpView> : SafeViewMvpPresenter<T>() {
-    val realm: Realm by lazy {
-        syncedRealm()
+    lateinit var realm: Realm
+
+    override fun attachView(view: T?) {
+        super.attachView(view)
+        realm = syncedRealm()
     }
 
     override fun detachView(retainInstance: Boolean) {
