@@ -5,7 +5,7 @@ apply plugin: 'com.github.triplet.play'
 
 def versionMajor = 1
 def versionMinor = 0
-def versionPatch = 0
+def versionPatch = 1
 def versionBuild = Integer.parseInt(System.getenv('TRAVIS_BUILD_NUMBER') ?: "1")
 
 def keystoreAlias = System.getenv('keystoreAlias') ?: project.property("tensuu.student.signing.upload.alias")
